@@ -897,489 +897,582 @@ const PhoneSystemContent = () => {
           <h2 className="text-4xl font-semibold text-gray-900 mb-6 text-center">
             Types of Business Phone System Solutions
           </h2>
-          <p className="text-gray-800 text-lg text-left">
+          <p className="text-gray-800 text-lg text-left -mb-8">
             Modern phone systems come in various configurations, each offering
             unique management capabilities for different business needs.
           </p>
 
           {/* Phone system types as cards */}
-          {/* mine */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 800 400"
-            className="-mt-15 mb-10"
-          >
-            {/* <!-- Background --> */}
-            {/* <rect width="800" height="400" fill="#f8fafc" /> */}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  {/* <!-- System Cards --> */}
+  {/* <!-- Cloud VoIP --> */}
+  <g>
+    <rect
+      x="50"
+      y="80"
+      width="160"
+      height="240"
+      rx="10"
+      fill="#eff6ff"
+      stroke="#3b82f6"
+      stroke-width="2"
+    />
+    <text
+      x="130"
+      y="110"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#1e40af"
+    >
+      Cloud-Based VoIP
+    </text>
 
-            {/* <!-- System Cards --> */}
-            {/* <!-- Cloud VoIP --> */}
-            <g>
-              <rect
-                x="50"
-                y="80"
-                width="160"
-                height="240"
-                rx="10"
-                fill="#eff6ff"
-                stroke="#3b82f6"
-                stroke-width="2"
-              />
-              <text
-                x="130"
-                y="110"
-                font-size="16"
-                font-weight="bold"
-                text-anchor="middle"
-                fill="#1e40af"
-              >
-                Cloud-Based VoIP
-              </text>
+    {/* <!-- Improved Cloud icon --> */}
+    <path
+      d="M110 145 C110 130, 120 125, 135 130 C140 120, 155 120, 160 130 C170 125, 180 135, 175 145 C180 155, 170 165, 160 165 C155 175, 140 175, 130 165 C120 170, 105 165, 110 155 C105 150, 105 140, 110 145"
+      fill="#3b82f6"
+    />
+    <circle cx="125" cy="140" r="5" fill="white" opacity="0.6"/>
+    <circle cx="145" cy="135" r="6" fill="white" opacity="0.6"/>
+    <circle cx="155" cy="150" r="4" fill="white" opacity="0.6"/>
+    <path
+      d="M140 150 L125 145 L120 155"
+      stroke="white"
+      stroke-width="1"
+      opacity="0.6"
+      fill="none"
+    />
 
-              {/* <!-- Cloud icon --> */}
-              <path
-                d="M110 145 C110 135, 120 130, 130 135 C135 125, 150 125, 155 135 C165 130, 175 140, 170 150 C175 155, 170 165, 160 165 C160 170, 150 175, 140 170 C135 175, 125 175, 120 170 C110 170, 105 160, 110 155 C105 150, 105 140, 110 145"
-                fill="#3b82f6"
-              />
+    {/* <!-- Features --> */}
+    <circle cx="65" cy="195" r="4" fill="#3b82f6" />
+    <text
+      x="75"
+      y="200"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Web Portal
+    </text>
 
-              {/* <!-- Features --> */}
-              <circle cx="65" cy="195" r="4" fill="#3b82f6" />
-              <text
-                x="75"
-                y="200"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Web Portal
-              </text>
+    <circle cx="65" cy="220" r="4" fill="#3b82f6" />
+    <text
+      x="75"
+      y="225"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Auto Updates
+    </text>
 
-              <circle cx="65" cy="220" r="4" fill="#3b82f6" />
-              <text
-                x="75"
-                y="225"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Auto Updates
-              </text>
+    <circle cx="65" cy="245" r="4" fill="#3b82f6" />
+    <text
+      x="75"
+      y="250"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Mobile Apps
+    </text>
 
-              <circle cx="65" cy="245" r="4" fill="#3b82f6" />
-              <text
-                x="75"
-                y="250"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Mobile Apps
-              </text>
+    <circle cx="65" cy="270" r="4" fill="#3b82f6" />
+    <text
+      x="75"
+      y="275"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Low Upfront Cost
+    </text>
 
-              <circle cx="65" cy="270" r="4" fill="#3b82f6" />
-              <text
-                x="75"
-                y="275"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Low Upfront Cost
-              </text>
+    <circle cx="65" cy="295" r="4" fill="#3b82f6" />
+    <text
+      x="75"
+      y="300"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Rapid Scaling
+    </text>
+  </g>
 
-              <circle cx="65" cy="295" r="4" fill="#3b82f6" />
-              <text
-                x="75"
-                y="300"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Rapid Scaling
-              </text>
-            </g>
+  {/* <!-- On-Premise PBX --> */}
+  <g>
+    <rect
+      x="230"
+      y="80"
+      width="160"
+      height="240"
+      rx="10"
+      fill="#ecfdf5"
+      stroke="#10b981"
+      stroke-width="2"
+    />
+    <text
+      x="310"
+      y="110"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#065f46"
+    >
+      On-Premise PBX
+    </text>
 
-            {/* <!-- On-Premise PBX --> */}
-            <g>
-              <rect
-                x="230"
-                y="80"
-                width="160"
-                height="240"
-                rx="10"
-                fill="#ecfdf5"
-                stroke="#10b981"
-                stroke-width="2"
-              />
-              <text
-                x="310"
-                y="110"
-                font-size="16"
-                font-weight="bold"
-                text-anchor="middle"
-                fill="#065f46"
-              >
-                On-Premise PBX
-              </text>
+    {/* <!-- Improved Server icon --> */}
+    <rect
+      x="280"
+      y="130"
+      width="60"
+      height="40"
+      rx="3"
+      fill="#10b981"
+    />
+    <rect
+      x="280"
+      y="130"
+      width="60"
+      height="5"
+      rx="1"
+      fill="#059669"
+    />
+    <rect
+      x="285"
+      y="138"
+      width="50"
+      height="24"
+      rx="1"
+      fill="#059669"
+      opacity="0.3"
+    />
+    <circle cx="290" cy="135" r="1.5" fill="#ecfdf5" />
+    <circle cx="300" cy="135" r="1.5" fill="#ecfdf5" />
+    <circle cx="310" cy="135" r="1.5" fill="#ecfdf5" />
+    
+    <rect
+      x="290"
+      y="142"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    <rect
+      x="290"
+      y="148"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    <rect
+      x="290"
+      y="154"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    
+    <rect
+      x="310"
+      y="142"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    <rect
+      x="310"
+      y="148"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    <rect
+      x="310"
+      y="154"
+      width="10"
+      height="3"
+      rx="1"
+      fill="#ecfdf5"
+    />
+    
+    <rect
+      x="325"
+      y="142"
+      width="5"
+      height="5"
+      rx="1"
+      fill="#d1fae5"
+    />
+    <rect
+      x="335"
+      y="142"
+      width="5"
+      height="5"
+      rx="1"
+      fill="#34d399"
+    />
+    <rect
+      x="325"
+      y="152"
+      width="5"
+      height="5"
+      rx="1"
+      fill="#34d399"
+    />
+    <rect
+      x="335"
+      y="152"
+      width="5"
+      height="5"
+      rx="1"
+      fill="#d1fae5"
+    />
 
-              {/* <!-- Server icon --> */}
-              <rect
-                x="280"
-                y="130"
-                width="60"
-                height="40"
-                rx="2"
-                fill="#10b981"
-              />
-              <rect
-                x="290"
-                y="140"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="300"
-                y="140"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="290"
-                y="150"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="300"
-                y="150"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="325"
-                y="140"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="335"
-                y="140"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="325"
-                y="150"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
-              <rect
-                x="335"
-                y="150"
-                width="5"
-                height="5"
-                rx="1"
-                fill="#ecfdf5"
-              />
+    {/* <!-- Features --> */}
+    <circle cx="245" cy="195" r="4" fill="#10b981" />
+    <text
+      x="255"
+      y="200"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Full Control
+    </text>
 
-              {/* <!-- Features --> */}
-              <circle cx="245" cy="195" r="4" fill="#10b981" />
-              <text
-                x="255"
-                y="200"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Full Control
-              </text>
+    <circle cx="245" cy="220" r="4" fill="#10b981" />
+    <text
+      x="255"
+      y="225"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Data Privacy
+    </text>
 
-              <circle cx="245" cy="220" r="4" fill="#10b981" />
-              <text
-                x="255"
-                y="225"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Data Privacy
-              </text>
+    <circle cx="245" cy="245" r="4" fill="#10b981" />
+    <text
+      x="255"
+      y="250"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Customization
+    </text>
 
-              <circle cx="245" cy="245" r="4" fill="#10b981" />
-              <text
-                x="255"
-                y="250"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Customization
-              </text>
+    <circle cx="245" cy="270" r="4" fill="#10b981" />
+    <text
+      x="255"
+      y="275"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Hardware Required
+    </text>
 
-              <circle cx="245" cy="270" r="4" fill="#10b981" />
-              <text
-                x="255"
-                y="275"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Hardware Required
-              </text>
+    <circle cx="245" cy="295" r="4" fill="#10b981" />
+    <text
+      x="255"
+      y="300"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      IT Team Needed
+    </text>
+  </g>
 
-              <circle cx="245" cy="295" r="4" fill="#10b981" />
-              <text
-                x="255"
-                y="300"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                IT Team Needed
-              </text>
-            </g>
+  {/* <!-- Hybrid Systems --> */}
+  <g>
+    <rect
+      x="410"
+      y="80"
+      width="160"
+      height="240"
+      rx="10"
+      fill="#f3e8ff"
+      stroke="#a855f7"
+      stroke-width="2"
+    />
+    <text
+      x="490"
+      y="110"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#7e22ce"
+    >
+      Hybrid Systems
+    </text>
 
-            {/* <!-- Hybrid Systems --> */}
-            <g>
-              <rect
-                x="410"
-                y="80"
-                width="160"
-                height="240"
-                rx="10"
-                fill="#f3e8ff"
-                stroke="#a855f7"
-                stroke-width="2"
-              />
-              <text
-                x="490"
-                y="110"
-                font-size="16"
-                font-weight="bold"
-                text-anchor="middle"
-                fill="#7e22ce"
-              >
-                Hybrid Systems
-              </text>
+    {/* <!-- Improved Hybrid icon --> */}
+    <rect 
+      x="450" 
+      y="135" 
+      width="25" 
+      height="30" 
+      rx="2" 
+      fill="#a855f7" 
+    />
+    <rect 
+      x="455" 
+      y="140" 
+      width="15" 
+      height="2" 
+      fill="white" 
+      opacity="0.7" 
+    />
+    <rect 
+      x="455" 
+      y="145" 
+      width="15" 
+      height="2" 
+      fill="white" 
+      opacity="0.7" 
+    />
+    <rect 
+      x="455" 
+      y="150" 
+      width="15" 
+      height="2" 
+      fill="white" 
+      opacity="0.7" 
+    />
+    <rect 
+      x="455" 
+      y="155" 
+      width="15" 
+      height="2" 
+      fill="white" 
+      opacity="0.7" 
+    />
+    
+    <path
+      d="M485 145 C485 130, 500 125, 510 135 C515 125, 530 125, 535 135 C545 130, 555 140, 550 150 C555 160, 545 170, 535 170 C535 175, 520 180, 510 170 C505 180, 490 175, 485 165 C475 170, 470 155, 480 150"
+      fill="#a855f7"
+    />
+    <circle cx="500" cy="140" r="4" fill="white" opacity="0.5"/>
+    <circle cx="520" cy="135" r="6" fill="white" opacity="0.5"/>
+    <circle cx="535" cy="150" r="5" fill="white" opacity="0.5"/>
+    
+    <path 
+      d="M475 145 L485 145" 
+      stroke="#a855f7" 
+      stroke-width="3" 
+    />
 
-              {/* <!-- Hybrid icon --> */}
-              <rect x="460" y="130" width="30" height="30" fill="#a855f7" />
-              <path
-                d="M500 145 C500 135, 510 130, 520 135 C525 125, 540 125, 545 135 C555 130, 565 140, 560 150 C565 155, 560 165, 550 165 C550 170, 540 175, 530 170 C525 175, 515 175, 510 170"
-                fill="#a855f7"
-              />
+    {/* <!-- Features --> */}
+    <circle cx="425" cy="195" r="4" fill="#a855f7" />
+    <text
+      x="435"
+      y="200"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Combined Management
+    </text>
 
-              {/* <!-- Features --> */}
-              <circle cx="425" cy="195" r="4" fill="#a855f7" />
-              <text
-                x="435"
-                y="200"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Combined Management
-              </text>
+    <circle cx="425" cy="220" r="4" fill="#a855f7" />
+    <text
+      x="435"
+      y="225"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Phased Migration
+    </text>
 
-              <circle cx="425" cy="220" r="4" fill="#a855f7" />
-              <text
-                x="435"
-                y="225"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Phased Migration
-              </text>
+    <circle cx="425" cy="245" r="4" fill="#a855f7" />
+    <text
+      x="435"
+      y="250"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Legacy Integration
+    </text>
 
-              <circle cx="425" cy="245" r="4" fill="#a855f7" />
-              <text
-                x="435"
-                y="250"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Legacy Integration
-              </text>
+    <circle cx="425" cy="270" r="4" fill="#a855f7" />
+    <text
+      x="435"
+      y="275"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Flexible Deployment
+    </text>
 
-              <circle cx="425" cy="270" r="4" fill="#a855f7" />
-              <text
-                x="435"
-                y="275"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Flexible Deployment
-              </text>
+    <circle cx="425" cy="295" r="4" fill="#a855f7" />
+    <text
+      x="435"
+      y="300"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Moderate Complexity
+    </text>
+  </g>
 
-              <circle cx="425" cy="295" r="4" fill="#a855f7" />
-              <text
-                x="435"
-                y="300"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Moderate Complexity
-              </text>
-            </g>
+  {/* <!-- UCaaS Platform --> */}
+  <g>
+    <rect
+      x="590"
+      y="80"
+      width="160"
+      height="240"
+      rx="10"
+      fill="#fee2e2"
+      stroke="#ef4444"
+      stroke-width="2"
+    />
+    <text
+      x="670"
+      y="110"
+      font-size="16"
+      font-weight="bold"
+      text-anchor="middle"
+      fill="#b91c1c"
+    >
+      UCaaS Platform
+    </text>
 
-            {/* <!-- UCaaS Platform --> */}
-            <g>
-              <rect
-                x="590"
-                y="80"
-                width="160"
-                height="240"
-                rx="10"
-                fill="#fee2e2"
-                stroke="#ef4444"
-                stroke-width="2"
-              />
-              <text
-                x="670"
-                y="110"
-                font-size="16"
-                font-weight="bold"
-                text-anchor="middle"
-                fill="#b91c1c"
-              >
-                UCaaS Platform
-              </text>
+    {/* <!-- Improved Communication icon --> */}
+    <circle cx="635" cy="145" r="18" fill="#ef4444" />
+    <circle cx="635" cy="145" r="14" fill="#fca5a5" opacity="0.3" />
+    <path d="M627 141 L643 141" stroke="white" stroke-width="2" />
+    <path d="M627 145 L643 145" stroke="white" stroke-width="2" />
+    <path d="M627 149 L643 149" stroke="white" stroke-width="2" />
+    
+    <circle cx="680" cy="145" r="18" fill="#ef4444" />
+    <circle cx="680" cy="145" r="14" fill="#fca5a5" opacity="0.3" />
+    <rect x="672" y="137" width="16" height="16" rx="2" stroke="white" stroke-width="1.5" fill="none" />
+    <path d="M672 141 L688 141" stroke="white" stroke-width="1" />
+    <path d="M672 145 L688 145" stroke="white" stroke-width="1" />
+    <path d="M672 149 L688 149" stroke="white" stroke-width="1" />
+    
+    <path d="M653 145 L662 145" stroke="#ef4444" stroke-width="2.5" />
+    <path d="M650 145 L665 145" stroke="#b91c1c" stroke-width="3" opacity="0.3" />
+    <polygon points="662,142 662,148 667,145" fill="#ef4444" />
 
-              {/* <!-- Communication icon --> */}
-              {/* <circle cx="640" y="145" r="20" fill="#ef4444" /> */}
-              <path
-                d="M635 140 L645 140 M635 145 L645 145 M635 150 L645 150"
-                stroke="white"
-                stroke-width="2"
-              />
-              {/* <circle cx="680" y="145" r="15" fill="#ef4444" /> */}
-              <path
-                d="M675 142 L685 142 M675 148 L685 148"
-                stroke="white"
-                stroke-width="2"
-              />
-              <path d="M655 145 L670 145" stroke="#ef4444" stroke-width="2" />
+    {/* <!-- Features --> */}
+    <circle cx="605" cy="195" r="4" fill="#ef4444" />
+    <text
+      x="615"
+      y="200"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Unified Communications
+    </text>
 
-              {/* <!-- Features --> */}
-              <circle cx="605" cy="195" r="4" fill="#ef4444" />
-              <text
-                x="615"
-                y="200"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Unified Communications
-              </text>
+    <circle cx="605" cy="220" r="4" fill="#ef4444" />
+    <text
+      x="615"
+      y="225"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Collaboration Tools
+    </text>
 
-              <circle cx="605" cy="220" r="4" fill="#ef4444" />
-              <text
-                x="615"
-                y="225"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Collaboration Tools
-              </text>
+    <circle cx="605" cy="245" r="4" fill="#ef4444" />
+    <text
+      x="615"
+      y="250"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Single Interface
+    </text>
 
-              <circle cx="605" cy="245" r="4" fill="#ef4444" />
-              <text
-                x="615"
-                y="250"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Single Interface
-              </text>
+    <circle cx="605" cy="270" r="4" fill="#ef4444" />
+    <text
+      x="615"
+      y="275"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Cross-Platform
+    </text>
 
-              <circle cx="605" cy="270" r="4" fill="#ef4444" />
-              <text
-                x="615"
-                y="275"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Cross-Platform
-              </text>
+    <circle cx="605" cy="295" r="4" fill="#ef4444" />
+    <text
+      x="615"
+      y="300"
+      font-size="12"
+      fill="#334155"
+      text-anchor="start"
+    >
+      Team Integration
+    </text>
+  </g>
 
-              <circle cx="605" cy="295" r="4" fill="#ef4444" />
-              <text
-                x="615"
-                y="300"
-                font-size="12"
-                fill="#334155"
-                text-anchor="start"
-              >
-                Team Integration
-              </text>
-            </g>
+  {/* <!-- Bottom Comparison Indicators --> */}
+  <line
+    x1="50"
+    y1="350"
+    x2="750"
+    y2="350"
+    stroke="#94a3b8"
+    stroke-width="2"
+  />
 
-            {/* <!-- Bottom Comparison Indicators --> */}
-            <line
-              x1="50"
-              y1="350"
-              x2="750"
-              y2="350"
-              stroke="#94a3b8"
-              stroke-width="2"
-            />
-
-            {/* <!-- Cost indicator --> */}
-            <text
-              x="130"
-              y="370"
-              font-size="12"
-              fill="#64748b"
-              text-anchor="middle"
-            >
-              Lower Upfront Cost
-            </text>
-            <text
-              x="670"
-              y="370"
-              font-size="12"
-              fill="#64748b"
-              text-anchor="middle"
-            >
-              Higher Upfront Cost
-            </text>
-            <line
-              x1="150"
-              y1="350"
-              x2="650"
-              y2="350"
-              stroke="#3b82f6"
-              stroke-width="4"
-            />
-            <circle cx="150" cy="350" r="6" fill="#3b82f6" />
-            <circle cx="310" cy="350" r="6" fill="#10b981" />
-            <circle cx="490" cy="350" r="6" fill="#a855f7" />
-            <circle cx="650" cy="350" r="6" fill="#ef4444" />
-          </svg>
+  {/* <!-- Cost indicator --> */}
+  <text
+    x="130"
+    y="370"
+    font-size="12"
+    fill="#64748b"
+    text-anchor="middle"
+  >
+    Lower Upfront Cost
+  </text>
+  <text
+    x="670"
+    y="370"
+    font-size="12"
+    fill="#64748b"
+    text-anchor="middle"
+  >
+    Higher Upfront Cost
+  </text>
+  <line
+    x1="150"
+    y1="350"
+    x2="650"
+    y2="350"
+    stroke="#3b82f6"
+    stroke-width="4"
+  />
+  <circle cx="150" cy="350" r="6" fill="#3b82f6" />
+  <circle cx="310" cy="350" r="6" fill="#10b981" />
+  <circle cx="490" cy="350" r="6" fill="#a855f7" />
+  <circle cx="650" cy="350" r="6" fill="#ef4444" />
+</svg>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-500">
+            <table className="min-w-full bg-white border border-gray-500 mt-8">
               <thead>
                 <tr className="bg-gray-100">
                   <th className="py-2 px-4 border border-gray-500 text-xl text-gray-800">
