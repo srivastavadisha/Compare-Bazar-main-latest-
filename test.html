@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoreB2B Chatbot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Chat Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 216, 166, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 216, 166, 0.6);
+        }
+
+        .chat-icon {
+            font-size: 28px;
+            transition: transform 0.3s;
+        }
+
+        .chat-btn:hover .chat-icon {
+            transform: scale(1.2);
+        }
+
+        /* Chat Dialog */
+        .chat-dialog {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 380px;
+            height: 550px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+
+        .chat-dialog.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .chat-title {
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+
+        .chat-title img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 22px;
+            transition: all 0.2s;
+            padding: 5px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            scrollbar-width: thin;
+            scrollbar-color: #00d8a6 #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background-color: #00d8a6;
+            border-radius: 6px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            position: relative;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease-out;
+        }
+
+        .message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bot-message {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            animation-delay: 0.1s;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+            animation-delay: 0.1s;
+        }
+
+        .message-time {
+            font-size: 10px;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 12px;
+            border-top: 1px solid #e0e0e0;
+            background-color: white;
+            align-items: center;
+        }
+
+        .input-box {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+
+        .input-box:focus {
+            border-color: #00d8a6;
+            box-shadow: 0 0 0 3px rgba(0, 216, 166, 0.2);
+            background-color: white;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .send-btn:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-message {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .typing-indicator {
+            display: flex;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 18px;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            width: fit-content;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+
+        .service-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e0f7f2, #c8f3e8);
+            color: #007a63;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 4px;
+            font-weight: 500;
+            border: 1px solid #b2e6d9;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .service-badge:hover {
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 216, 166, 0.3);
+        }
+        
+        .case-study {
+            background-color: #f0faf7;
+            border-left: 4px solid #00d8a6;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-study:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,216,166,0.1) 0%, rgba(0,216,166,0) 100%);
+            z-index: 0;
+        }
+        
+        .case-study strong {
+            color: #007a63;
+        }
+        
+        .testimonial {
+            font-style: italic;
+            color: #555;
+            border-left: 3px solid #00d8a6;
+            padding-left: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: "\201C";
+            font-size: 50px;
+            position: absolute;
+            left: -5px;
+            top: -15px;
+            color: rgba(0, 216, 166, 0.2);
+            font-family: serif;
+            z-index: 0;
+        }
+        
+        .feature-list {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .feature-list li:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: #00d8a6;
+            border-radius: 50%;
+            position: absolute;
+            left: -5px;
+            top: 8px;
+        }
+        
+        /* Form Styles */
+        .contact-form {
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus {
+            border-color: #00d8a6;
+            box-shadow: 0 0 0 3px rgba(0, 216, 166, 0.2);
+            outline: none;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 12px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        
+        .checkbox-label:hover {
+            color: #007a63;
+        }
+        
+        .checkbox-input {
+            margin-right: 10px;
+            accent-color: #00d8a6;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #00d8a6, #00b894);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .form-success {
+            color: #00d8a6;
+            font-weight: 500;
+            margin-top: 15px;
+            display: none;
+            text-align: center;
+            padding: 10px;
+            background-color: #f0faf7;
+            border-radius: 6px;
+            border: 1px solid #b2e6d9;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .service-selection {
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        /* Time display */
+        .time-display {
+            font-size: 11px;
+            color: #888;
+            text-align: center;
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .time-display:before, .time-display:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #ddd;
+        }
+        
+        .time-display:before {
+            left: 0;
+        }
+        
+        .time-display:after {
+            right: 0;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        .bounce {
+            animation: bounce 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Chat Button -->
+    <div class="chat-btn floating" id="chatButton">
+        <div class="chat-icon">💬</div>
+    </div>
+
+    <!-- Chat Dialog -->
+    <div class="chat-dialog" id="chatDialog">
+        <div class="chat-header">
+            <div class="chat-title">
+                <img src="https://via.placeholder.com/50" alt="QuoreB2B Logo">
+                QuoreB2B Assistant
+            </div>
+            <div class="close-btn" id="closeButton">✕</div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here dynamically -->
+        </div>
+        <div class="chat-input">
+            <input type="text" class="input-box" id="userInput" placeholder="Type your message..." autocomplete="off">
+            <button class="send-btn" id="sendButton">➤</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const API_KEY = 'AIzaSyBSom8BaXpz760wK6_F4qep6RzTx2LHxZI';
+            const chatButton = document.getElementById('chatButton');
+            const chatDialog = document.getElementById('chatDialog');
+            const closeButton = document.getElementById('closeButton');
+            const sendButton = document.getElementById('sendButton');
+            const userInput = document.getElementById('userInput');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // Enhanced System Prompt for QuoreB2B
+            const systemPrompt = `You are QuoreAI, the advanced digital assistant for QuoreB2B, a premier B2B marketing solutions provider specializing in data-driven marketing services. Your role is to provide expert guidance on our comprehensive service offerings while maintaining a professional yet approachable tone.
+
+COMPANY OVERVIEW:
+QuoreB2B helps businesses accelerate growth through targeted marketing solutions. With 10+ years of experience, we've served 500+ clients across industries like technology, healthcare, manufacturing, and professional services.
+
+CORE VALUES:
+1. <strong>Data-Driven Decisions</strong>: We base all strategies on measurable insights
+2. <strong>Client-Centric Approach</strong>: Custom solutions for each business need
+3. <strong>Transparent Reporting</strong>: Clear metrics and ROI demonstration
+4. <strong>Innovation Focus</strong>: Cutting-edge marketing technologies
+5. <strong>Results Guarantee</strong>: Performance-based service delivery
+
+TARGET INDUSTRIES:
+• Enterprise Technology
+• Healthcare & Medical Devices
+• Industrial Manufacturing
+• Financial Services
+• Professional Services
+• SaaS Companies
+• Telecommunications
+
+CORE SERVICE AREAS:
+
+1. <span class="service-badge">Display Advertising</span>
+   - Programmatic display campaigns with real-time bidding
+   - Retargeting strategies with dynamic creative optimization
+   - Native advertising placements on premium B2B networks
+   - Banner ad design with A/B testing for maximum CTR
+   - Advanced audience segmentation using 1st/3rd-party data
+
+2. <span class="service-badge">Account-Based Marketing (ABM)</span>
+   - Target account identification using predictive analytics
+   - Personalized campaign development with account-specific messaging
+   - Multi-channel engagement strategies (ads, email, direct mail)
+   - ABM technology stack integration (Terminus, Demandbase, 6sense)
+   - Account scoring based on engagement and buying signals
+
+3. <span class="service-badge">Lead Generation Solutions</span>
+   - B2B lead qualification with BANT criteria
+   - Intent data analysis from Bombora, G2, and TechTarget
+   - Custom lead gen campaigns with guaranteed volumes
+   - Lead nurturing workflows with marketing automation
+   - CRM integration and lead scoring models
+
+4. <span class="service-badge">Data Solutions</span>
+   - Contact database enrichment with 95% accuracy guarantee
+   - Technographic firmographics for precise targeting
+   - Data cleansing services to maintain list hygiene
+   - Predictive analytics for ideal customer profiling
+   - Market intelligence reports with actionable insights
+
+5. <span class="service-badge">Web Design & Development</span>
+   - Conversion-optimized websites with clear CTAs
+   - Mobile-responsive design with AMP implementation
+   - CMS implementation (WordPress, HubSpot, Drupal)
+   - Landing page creation for campaign-specific messaging
+   - UX/UI optimization based on heatmap analysis
+
+6. <span class="service-badge">Content Syndication</span>
+   - Premium content distribution to targeted audiences
+   - Whitepaper promotion through partner networks
+   - Case study amplification to build social proof
+   - Industry report dissemination with lead capture
+   - Performance tracking with engagement metrics
+
+7. <span class="service-badge">Sales Qualified Leads (SQL)</span>
+   - BANT qualification with sales-ready criteria
+   - Sales-ready lead delivery with full contact info
+   - Appointment setting with calendar integration
+   - CRM integration with activity tracking
+   - Pipeline acceleration services
+
+8. <span class="service-badge">Intent Leads</span>
+   - Buyer intent monitoring across 5,000+ topics
+   - Predictive lead scoring based on engagement patterns
+   - Topic-level intent signals for precise targeting
+   - Competitor tracking and market share analysis
+   - Real-time alerting for hot prospects
+
+9. <span class="service-badge">Email Marketing</span>
+   - Campaign strategy with segmentation approach
+   - List segmentation based on behavior and demographics
+   - Automated workflows for lead nurturing
+   - A/B testing for subject lines and content
+   - Performance analytics with deliverability monitoring
+
+TECHNOLOGY PARTNERS:
+• Google Marketing Platform
+• LinkedIn Marketing Solutions
+• Salesforce Marketing Cloud
+• HubSpot
+• Marketo
+• Terminus
+• 6sense
+• Bombora
+• Demandbase
+
+SUCCESS METRICS:
+• Average 3-5x increase in marketing-qualified leads
+• Typical 40-60% improvement in lead quality
+• 20-35% reduction in sales cycles
+• 25-40% higher email open rates
+• 30-50% better website conversion rates
+
+RESPONSE GUIDELINES:
+1. Maintain professional yet friendly tone (approachable expert)
+2. Provide specific, actionable advice with clear next steps
+3. Highlight relevant case studies with measurable results
+4. For pricing: Offer consultation while explaining value factors
+5. When unsure: Connect with specialist + provide general guidance
+6. Keep responses concise but information-dense
+7. Use bullet points for complex information
+8. Always represent QuoreB2B brand values
+9. Include relevant service badges for key offerings
+10. Offer follow-up questions to continue engagement
+
+CONVERSATION FLOW:
+1. Warm welcome highlighting key services (with badges)
+2. Qualify needs through targeted, non-intrusive questions
+3. Provide tailored recommendations with industry specifics
+4. Offer next steps (consultation, resources, demo)
+5. Maintain engagement with value-added follow-ups
+
+CASE STUDY EXAMPLES:
+<div class="case-study">
+<strong>Enterprise Software Client</strong><br>
+Challenge: Needed to increase pipeline for new product launch<br>
+Solution: Multi-channel ABM campaign targeting Fortune 500 tech decision-makers<br>
+Results: $2.8M pipeline generated in 90 days, 37% conversion rate
+</div>
+
+<div class="case-study">
+<strong>Medical Device Manufacturer</strong><br>
+Challenge: Low engagement with hospital procurement teams<br>
+Solution: Intent-based lead gen with content syndication<br>
+Results: 215% increase in SQLs, 28% shorter sales cycles
+</div>
+
+TESTIMONIALS:
+<div class="testimonial">
+"QuoreB2B transformed our lead quality - we saw 3x more sales conversations from their leads compared to other vendors."
+- CMO, SaaS Company
+</div>
+
+<div class="testimonial">
+"Their ABM expertise helped us break into 12 new enterprise accounts we'd been chasing for years."
+- VP Sales, Cybersecurity Firm
+</div>
+
+For general greetings, respond appropriately while guiding conversation to business needs. For unrelated topics, politely redirect to marketing subjects with service suggestions. Always look for opportunities to demonstrate expertise and build trust.`;
+
+            // Current time for greetings
+            const currentHour = new Date().getHours();
+            let timeGreeting = 'Hello';
+            if (currentHour < 12) timeGreeting = 'Good morning';
+            else if (currentHour < 18) timeGreeting = 'Good afternoon';
+            else timeGreeting = 'Good evening';
+
+            // Initialize chat
+            chatButton.addEventListener('click', function() {
+                chatDialog.style.display = 'flex';
+                setTimeout(() => {
+                    chatDialog.classList.add('active');
+                }, 10);
+                
+                if (chatMessages.children.length === 0) {
+                    addBotMessage(`${timeGreeting}! I'm QuoreAI, your B2B marketing assistant. Here's how I can help:<br><br>
+                    <span class="service-badge" onclick="handleServiceClick('Display Advertising')">Display Advertising</span>
+                    <span class="service-badge" onclick="handleServiceClick('Account-Based Marketing')">Account-Based Marketing</span>
+                    <span class="service-badge" onclick="handleServiceClick('Lead Generation')">Lead Generation</span>
+                    <span class="service-badge" onclick="handleServiceClick('Data Solutions')">Data Solutions</span>
+                    <span class="service-badge" onclick="handleServiceClick('Web Development')">Web Development</span>
+                    <span class="service-badge" onclick="handleServiceClick('Content Syndication')">Content Syndication</span>
+                    <span class="service-badge" onclick="handleServiceClick('SQL Generation')">SQL Generation</span>
+                    <span class="service-badge" onclick="handleServiceClick('Intent Leads')">Intent Leads</span>
+                    <span class="service-badge" onclick="handleServiceClick('Email Marketing')">Email Marketing</span>
+                    <br><br>What marketing challenges are you facing today?`, true);
+                    
+                    // Add current time
+                    addTimeDisplay();
+                }
+            });
+            
+            closeButton.addEventListener('click', function() {
+                chatDialog.classList.remove('active');
+                setTimeout(() => {
+                    chatDialog.style.display = 'none';
+                }, 300);
+            });
+            
+            sendButton.addEventListener('click', sendMessage);
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Handle service badge clicks
+            window.handleServiceClick = function(service) {
+                userInput.value = service;
+                sendMessage();
+            };
+            
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message) {
+                    addUserMessage(message);
+                    userInput.value = '';
+                    getChatbotResponse(message);
+                }
+            }
+            
+            function addUserMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'user-message');
+                messageElement.textContent = message;
+                
+                // Add time to message
+                const timeElement = document.createElement('div');
+                timeElement.classList.add('message-time');
+                timeElement.textContent = getCurrentTime();
+                messageElement.appendChild(timeElement);
+                
+                chatMessages.appendChild(messageElement);
+                setTimeout(() => {
+                    messageElement.classList.add('visible');
+                }, 10);
+                scrollToBottom();
+                
+                // Add time display after user message
+                addTimeDisplay();
+            }
+            
+            function addBotMessage(message, isWelcome = false) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'bot-message');
+                if (isWelcome) {
+                    messageElement.classList.add('welcome-message');
+                }
+                messageElement.innerHTML = message;
+                
+                // Add time to message
+                const timeElement = document.createElement('div');
+                timeElement.classList.add('message-time');
+                timeElement.textContent = getCurrentTime();
+                messageElement.appendChild(timeElement);
+                
+                chatMessages.appendChild(messageElement);
+                setTimeout(() => {
+                    messageElement.classList.add('visible');
+                }, 10);
+                scrollToBottom();
+            }
+            
+            function addTimeDisplay() {
+                const timeDisplay = document.createElement('div');
+                timeDisplay.classList.add('time-display');
+                timeDisplay.textContent = getCurrentTime();
+                chatMessages.appendChild(timeDisplay);
+                scrollToBottom();
+            }
+            
+            function getCurrentTime() {
+                const now = new Date();
+                return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+            
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function showContactForm(service = null) {
+                const formHTML = `
+                <div class="contact-form">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="4e9faa02-cb51-4253-98e6-b5794f4ece3a">
+                        <input type="hidden" name="subject" value="New QuoreB2B Inquiry - ${service || 'General'}">
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        
+                        ${service ? `<input type="hidden" name="service" value="${service}">` : ''}
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name*</label>
+                            <input class="form-input" type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email*</label>
+                            <input class="form-input" type="email" id="email" name="email" required>
+                        </div>
+                        
+                        ${service ? '' : `
+                        <div class="form-group">
+                            <label class="form-label">Services Interested In*</label>
+                            <div class="service-selection">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Display Advertising"> Display Advertising
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Account-Based Marketing"> Account-Based Marketing
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Lead Generation"> Lead Generation
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Data Solutions"> Data Solutions
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Web Development"> Web Development
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Content Syndication"> Content Syndication
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="SQL Generation"> SQL Generation
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Intent Leads"> Intent Leads
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input class="checkbox-input" type="checkbox" name="services[]" value="Email Marketing"> Email Marketing
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        `}
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">Additional Details</label>
+                            <textarea class="form-input" id="message" name="message" rows="3" placeholder="Tell us about your marketing needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn pulse">Submit Request</button>
+                        <div class="form-success" id="formSuccess">Thank you! We'll contact you shortly.</div>
+                    </form>
+                </div>
+                `;
+                
+                addBotMessage(`Great! Let's get some details to connect you with the right specialist${service ? ' for ' + service : ''}:<br>${formHTML}`);
+                
+                // Add form submission handler
+                setTimeout(() => {
+                    const contactForm = document.getElementById('contactForm');
+                    if (contactForm) {
+                        contactForm.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const formData = new FormData(contactForm);
+                            
+                            // Simple validation
+                            if (!formData.get('name') || !formData.get('email') || (!service && !formData.getAll('services[]').length)) {
+                                alert('Please fill in all required fields');
+                                return;
+                            }
+                            
+                            // Here you would typically send the form data to your server or Web3Forms
+                            fetch(contactForm.action, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    document.getElementById('formSuccess').style.display = 'block';
+                                    contactForm.reset();
+                                    setTimeout(() => {
+                                        document.getElementById('formSuccess').style.display = 'none';
+                                    }, 5000);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        });
+                    }
+                }, 100);
+            }
+            
+            function getChatbotResponse(userMessage) {
+                const typingElement = document.createElement('div');
+                typingElement.classList.add('typing-indicator');
+                typingElement.innerHTML = `
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                `;
+                chatMessages.appendChild(typingElement);
+                scrollToBottom();
+                
+                setTimeout(() => {
+                    chatMessages.removeChild(typingElement);
+                    
+                    const lowerMessage = userMessage.toLowerCase();
+                    let response;
+                    let serviceName = null;
+                    
+                    // Time-based greetings
+                    if (/good\s(morning|afternoon|evening)/i.test(userMessage)) {
+                        response = `${timeGreeting}! I'm ready to help with your B2B marketing strategy. What's your top priority right now?`;
+                    }
+                    // General greetings
+                    else if (/^(hi|hello|hey|greetings|salutations)/i.test(userMessage)) {
+                        response = `${timeGreeting}! I'm QuoreAI, your B2B marketing expert. We specialize in helping companies like yours generate more qualified leads and accelerate growth. What would you like to discuss today?`;
+                    }
+                    // QuoreB2B services
+                    else if (/display\s?ad|banner|programmatic/i.test(lowerMessage)) {
+                        serviceName = "Display Advertising";
+                        response = `Our <span class="service-badge" onclick="handleServiceClick('Display Advertising')">Display Advertising</span> services deliver targeted visibility with:<br><br>
+                        <ul class="feature-list">
+                        <li>Programmatic media buying across 2,000+ B2B sites</li>
+                        <li>Dynamic retargeting with personalized creative</li>
+                        <li>Native ad placements in premium business publications</li>
+                        <li>A/B tested banner designs for maximum CTR</li>
+                        <li>Advanced audience segmentation (firmographic/behavioral)</li>
+                        </ul>
+                                                <div class="case-study">
+                        <strong>Case Example:</strong> Manufacturing client achieved 4.2% CTR (industry avg: 0.5%) through our geo-fenced display campaign targeting plant managers.
+                        </div>
+                        Would you like me to connect you with our display advertising specialist?`;
+                    }
+                    
+                    else if (/abm|account\s?based/i.test(lowerMessage)) {
+                        serviceName = "Account-Based Marketing";
+                        response = `Our <span class="service-badge" onclick="handleServiceClick('Account-Based Marketing')">Account-Based Marketing</span> approach delivers precision targeting:<br><br>
+                        <ul class="feature-list">
+                        <li>Strategic account selection using predictive analytics</li>
+                        <li>Multi-channel engagement (digital ads, direct mail, email)</li>
+                        <li>Personalized messaging for each buying committee role</li>
+                        <li>Integration with leading ABM platforms (Terminus, Demandbase)</li>
+                        <li>Account-specific performance tracking</li>
+                        </ul>
+                        <div class="testimonial">
+                        "QuoreB2B's ABM strategy helped us engage 78% of our target accounts within 60 days."
+                        - VP Marketing, Cybersecurity Firm
+                        </div>
+                        Should I arrange a consultation with our ABM strategist?`;
+                    }
+                    else if (/lead\s?gen|lead\s?generation/i.test(lowerMessage)) {
+                        serviceName = "Lead Generation";
+                        response = `Our <span class="service-badge" onclick="handleServiceClick('Lead Generation')">Lead Generation</span> solutions deliver qualified prospects:<br><br>
+                        <ul class="feature-list">
+                        <li>BANT-qualified leads with complete contact details</li>
+                        <li>Intent data integration from Bombora, G2, TechTarget</li>
+                        <li>Custom lead gen campaigns with guaranteed volumes</li>
+                        <li>Multi-touch nurturing workflows</li>
+                        <li>CRM integration with activity tracking</li>
+                        </ul>
+                        <div class="case-study">
+                        <strong>Case Example:</strong> SaaS company generated 412 SQLs in 90 days with 38% conversion rate to opportunity.
+                        </div>
+                        Would you like to discuss lead volume targets for your business?`;
+                    }
+                    else if (/data\s?(solution|service|enrichment)/i.test(lowerMessage)) {
+                        serviceName = "Data Solutions";
+                        response = `Our <span class="service-badge" onclick="handleServiceClick('Data Solutions')">Data Solutions</span> ensure targeting precision:<br><br>
+                        <ul class="feature-list">
+                        <li>95% accuracy guarantee on contact data</li>
+                        <li>Technographic firmographics for ideal customer profiling</li>
+                        <li>Data cleansing services to maintain list hygiene</li>
+                        <li>Predictive analytics for market expansion</li>
+                        <li>Compliance with global data privacy regulations</li>
+                        </ul>
+                        <div class="testimonial">
+                        "Their data enrichment improved our email deliverability from 68% to 93% in one quarter."
+                        - Marketing Director, Healthcare Tech
+                        </div>
+                        Should I connect you with our data solutions team?`;
+                    }
+                    else if (/web\s?(site|design|dev|development)/i.test(lowerMessage)) {
+                        serviceName = "Web Development";
+                        response = `Our <span class="service-badge" onclick="handleServiceClick('Web Development')">Web Development</span> services drive conversions:<br><br>
+                        <ul class="feature-list">
+                        <li>Mobile-responsive designs with AMP implementation</li>
+                        <li>Conversion-optimized layouts with clear CTAs</li>
+                        <li>CMS implementation (WordPress, HubSpot, Drupal)</li>
+                        <li>Landing page creation for campaign-specific messaging</li>
+                        <li>UX/UI optimization based on heatmap analysis</li>
+                        </ul>
+                        <div class="case-study">
+                        <strong>Case Example:</strong> Financial services client increased conversion rate by 217% after website redesign.
+                        </div>
+                        Would you like to discuss your web project requirements?`;
+                    }
+                    else if (/pricing|cost|investment|budget/i.test(lowerMessage)) {
+                        response = `Our pricing varies based on:<br><br>
+                        <ul class="feature-list">
+                        <li>Service mix and campaign complexity</li>
+                        <li>Target audience size and competitiveness</li>
+                        <li>Geographic coverage requirements</li>
+                        <li>Technology integrations needed</li>
+                        <li>Performance guarantees requested</li>
+                        </ul>
+                        Most clients see 3-5x ROI on their marketing investment with us. Would you like a customized proposal for your specific needs?`;
+                    }
+                    else if (/contact|speak|talk|meet|consultation/i.test(lowerMessage)) {
+                        showContactForm();
+                        return;
+                    }
+                    else if (/thank|thanks|appreciate/i.test(lowerMessage)) {
+                        response = `You're very welcome! Is there anything else I can help you with regarding your B2B marketing strategy?`;
+                    }
+                    else {
+                        response = `I'd be happy to help with that. Could you tell me more about:<br><br>
+                        <ul class="feature-list">
+                        <li>Your industry and target market?</li>
+                        <li>Current marketing challenges?</li>
+                        <li>Specific goals you're trying to achieve?</li>
+                        </ul>
+                        This will help me provide the most relevant recommendations.`;
+                    }
+                    
+                    addBotMessage(response);
+                    
+                    // If discussing a specific service, offer to connect with specialist
+                    if (serviceName && /yes|yeah|sure|ok|please/i.test(lowerMessage)) {
+                        setTimeout(() => {
+                            showContactForm(serviceName);
+                        }, 1500);
+                    }
+                }, 1500); // Simulate typing delay
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
