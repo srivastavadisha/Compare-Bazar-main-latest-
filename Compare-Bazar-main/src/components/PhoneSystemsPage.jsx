@@ -95,47 +95,31 @@ const PhoneSystemsPage = () => {
     setTimeout(() => ripple.remove(), 600);
   };
 
-  const additionalText = "The modern business communication landscape has evolved significantly, with VoIP (Voice over Internet Protocol) systems replacing traditional PBX setups in many organizations. Today's business phone systems offer advanced features like AI-powered voicemail transcription, intelligent call routing, CRM integration, and comprehensive analytics dashboards. These tools help businesses track performance metrics, improve customer satisfaction, and streamline their communication processes. When evaluating different providers, it's important to consider factors such as scalability, reliability, security features, and total cost of ownership. Many systems now include unified communications capabilities, bringing together voice, video, messaging, and collaboration tools in a single platform.";
+  const additionalText = " The modern business phone system landscape has evolved significantly, with cloud-based VoIP solutions replacing traditional landlines in many organizations. Today's business phone systems offer advanced features like AI-powered call routing, CRM integration, voicemail-to-text transcription, and comprehensive analytics. These tools help businesses enhance customer service, improve team collaboration, and streamline communication workflows. When evaluating different providers, it's important to consider factors such as scalability, call quality, integration capabilities, and total cost of ownership. Many systems now include unified communications capabilities, bringing together voice, video, messaging, and conferencing in a single platform.";
 
   return (
     <>
-    <Navbar/>
-    <div className="max-w-6xl mx-auto p-4">
-      <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">The Best Business Phone Systems of 2025</h1>
-        <p className="text-gray-700 text-sm md:text-base mb-4">
-          Modern business phone systems boast AI tools for conversation intelligence, video capabilities, detailed analytics and more.
-        </p>
-        
-        <div className="flex flex-wrap items-center mt-2">
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-300 mr-3"></div>
-          <div>
-            <p className="text-xs md:text-sm">
-              <span>Written by: <strong>Jessica Elliott</strong>, Senior Analyst</span>
-              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                ✓ Editor Verified: <strong>Chad Brooks</strong>
-              </span>
-            </p>
-            <p className="text-xs text-gray-500">Updated Mar 03, 2025</p>
-          </div>
-        </div>
-
-        <div className="text-xs md:text-sm text-gray-600 mt-4 pb-4 border-b">
-          Business.com earns commissions from some listed providers. <a href="#" className="text-blue-600 hover:underline">Editorial Guidelines</a>.
-        </div>
-      </header>
-
-      <section className="mb-6">
-          <p className="text-gray-800 text-sm md:text-base">
-            As your business grows, ensuring you have the right communication tools is critical. Startups can often get by with a basic business phone 
-            system that doesn't include many bells and whistles. But, as your business becomes more sophisticated, it is critical that your communication 
-            tools also become more advanced.
+      <Navbar />
+      <div className="max-w-6xl mx-auto p-4">
+        <header className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">The Best Business Phone Systems of 2025</h1>
+  
+          <p className="text-gray-800 text-lg md:text-lg mb-4">
+            At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we understand the importance of seamless communication for your business. That's why we recommend the <span className="text-orange-500 font-semibold">best business phone systems</span> that provide crystal-clear call quality and advanced features for modern enterprises. The <span className="text-orange-500 font-semibold">best VoIP and UCaaS solutions</span> offer AI-driven call analytics, auto-attendants, and seamless integrations to help you manage communications more effectively. Whether you're running a small startup or a large corporation, the right phone system can transform how you connect with customers and collaborate with your team.
+          </p>
+        </header>
+  
+        <section className="mb-6">
+          <p className="text-gray-800 text-lg md:text-lg">
+            As your business grows, ensuring you have the right communication tools is critical. Small teams can often manage with basic phone services, but as your operations expand, it's essential that your phone system scales accordingly. Implementing the <span className="text-orange-500 font-semibold">best business phone system</span> can significantly enhance your ability to improve customer service, reduce costs, and boost productivity. At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we help you find the perfect communication solution that aligns with your business needs, offering features like call forwarding, video conferencing, and real-time analytics.
             {showMore && (
-              <span className="block mt-3">{additionalText}</span>
+              <span className="block mt-3">
+                {additionalText} Additionally, the <span className="text-orange-500 font-semibold">best business phone systems</span> provide advanced capabilities such as AI-powered virtual assistants, call recording, and multi-channel support to optimize your communications. With <span className="text-orange-500 font-semibold">Compare Bazar</span>, you can easily compare the top phone system providers, evaluate their features, and choose the one that best fits your growing business. Let us guide you to the tools that will take your business communications to the next level.
+              </span>
             )}
           </p>
-          <button 
-            className="mt-2 text-blue-600 font-medium flex items-center"
+          <button
+            className="mt-2 text-[#000e54] font-medium flex items-center"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? 'LESS -' : 'MORE +'}
