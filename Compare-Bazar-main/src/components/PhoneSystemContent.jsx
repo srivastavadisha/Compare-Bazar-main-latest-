@@ -907,14 +907,14 @@ const PhoneSystemContent = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 800 400"
-            // className="-mt-15 mb-10"
+            className="-mt-15 mb-10"
           >
             {/* <!-- Background --> */}
             {/* <rect width="800" height="400" fill="#f8fafc" /> */}
 
             {/* <!-- System Cards --> */}
             {/* <!-- Cloud VoIP --> */}
-            <g transform="translate(75, 75)">
+            <g>
               <rect
                 x="50"
                 y="80"
@@ -938,7 +938,8 @@ const PhoneSystemContent = () => {
 
               {/* <!-- Cloud icon --> */}
               <path
-                d="M-30,-5 Q-30,-25 -10,-25 Q-10,-40 10,-40 Q30,-40 30,-25 Q50,-25 50,-5 Q50,15 30,15 Q30,30 10,30 Q-10,30 -10,15 Q-30,15 -30,-5" fill="#3366cc"
+                d="M110 145 C110 135, 120 130, 130 135 C135 125, 150 125, 155 135 C165 130, 175 140, 170 150 C175 155, 170 165, 160 165 C160 170, 150 175, 140 170 C135 175, 125 175, 120 170 C110 170, 105 160, 110 155 C105 150, 105 140, 110 145"
+                fill="#3b82f6"
               />
 
               {/* <!-- Features --> */}
