@@ -33,7 +33,7 @@ const ShippingContainerInfoCards = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
-              src={image}
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF05P7sU4DwVV74umLANAYgo2o7YfuQbG7Rw&s"
               alt="Uses"
               className="w-full h-auto rounded-lg lg:h-[400px] md:h-[500px]"
             />
@@ -68,7 +68,7 @@ const ShippingContainerInfoCards = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
-              src={image}
+              src="https://www.unostructures.co/assets/img/product/uno-structures-gp-shipping-container-344.webp"
               alt="Containers"
              className="w-full h-auto rounded-lg lg:h-[400px] md:h-[500px]"
             />
@@ -100,7 +100,7 @@ const ShippingContainerInfoCards = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
-              src={image}
+              src="https://unity-connect.com/wp-content/uploads/2022/01/Business-Phone-System-Cost-1.jpg"
               alt="Cost"
             className="w-full h-auto rounded-lg lg:h-[400px] md:h-[500px]"
             />
@@ -136,7 +136,7 @@ const ShippingContainerInfoCards = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[550px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
-              src={image}
+              src="https://images.prismic.io/fiata/5b1d30b8-2814-4c70-81f6-c01c778fe593_cargo-integrity.png?auto=compress,format&rect=0,0,1279,720&w=620&h=349"
               alt="Benefits"
               className="w-full h-auto rounded-lg lg:h-[400px] md:h-[500px]"
             />
