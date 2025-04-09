@@ -381,7 +381,18 @@ const WebsiteBuilderComparison = () => {
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{platform.name}</h3>
                   <p className="text-lg text-gray-600 mb-3">{platform.bestFor}</p>
                   <p className="text-orange-500 font-bold text-lg">{platform.price}</p>
-                  <button className="mt-4 w-full bg-[#000e54] text-white py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                  <button 
+                  onClick={() => {
+                    // Scroll to the platform analysis section
+                    const element = document.getElementById(`platform-${platform.id}`);
+                    if (element) {
+                      // Optional: Add offset if you have a fixed header
+                      const yOffset = -100; 
+                      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({top: y, behavior: 'smooth'});
+                    }
+                  }}
+                  className="mt-4 w-full bg-[#000e54] text-white py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300 cursor-pointer">
                     View Details
                   </button>
                 </div>
@@ -643,7 +654,8 @@ const phoneFAQs = [
           <div id="third-wb" className="max-w-6xl mx-auto py-12 px-4 space-y-12 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-semibold text-center mb-12 text-gray-900">In-Depth Platform Analysis</h2>
             {platforms.map(platform => (
-              <div key={platform.id} className="bg-white rounded-xl shadow-lg p-8">
+              <div key={platform.id} 
+              id={`platform-${platform.id}`}className="bg-white rounded-xl shadow-lg p-8">
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
                     <div className="flex items-center mb-6">
