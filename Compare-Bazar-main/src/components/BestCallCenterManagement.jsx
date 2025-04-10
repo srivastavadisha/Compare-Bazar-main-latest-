@@ -3,9 +3,9 @@ import PhoneSystemCardCommon from './PhoneSystemCardCommon';
 import Navbar from './Navbar';
 import WideDiv from './WideDiv';
 import Footer from './Footer';
-import Feedback from './Feedback';
 import CallCenterForm from './CallCenterForm';
 import Modal from './Modal';
+import CallCenterContent from './CallCenterContent';
 
 const BestCallCenterManagement= () => {
   const [showMore, setShowMore] = useState(false);
@@ -212,53 +212,36 @@ const valueProps = [
       description: '20+ languages'
     }
   ];
-  const additionalText = "The modern business communication landscape has evolved significantly, with VoIP (Voice over Internet Protocol) systems replacing traditional PBX setups in many organizations. Today's business phone systems offer advanced features like AI-powered voicemail transcription, intelligent call routing, CRM integration, and comprehensive analytics dashboards. These tools help businesses track performance metrics, improve customer satisfaction, and streamline their communication processes. When evaluating different providers, it's important to consider factors such as scalability, reliability, security features, and total cost of ownership. Many systems now include unified communications capabilities, bringing together voice, video, messaging, and collaboration tools in a single platform.";
+  const additionalText = " The call center software landscape has evolved significantly, with cloud-based solutions replacing traditional on-premise systems in many organizations. Today's call center platforms offer advanced features like AI-powered routing, omnichannel support, real-time analytics, and workforce optimization tools. These solutions help businesses enhance customer service, improve agent productivity, and streamline operations. When evaluating different providers, it's important to consider factors such as scalability, integration capabilities, reporting features, and total cost of ownership. Many platforms now include unified communications capabilities, bringing together voice, email, chat, social media, and CRM in a single interface.";
 
   return (
     <>
-    <Navbar/>
-    <div className="max-w-6xl mx-auto p-4">
-      <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">The Best Call ceneter Management Sofware. 2025</h1>
-        <p className="text-gray-700 text-sm md:text-base mb-4">
-          Modern business phone systems boast AI tools for conversation intelligence, video capabilities, detailed analytics and more.
-        </p>
-        
-        <div className="flex flex-wrap items-center mt-2">
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-300 mr-3"></div>
-          <div>
-            <p className="text-xs md:text-sm">
-              <span>Written by: <strong>Jessica Elliott</strong>, Senior Analyst</span>
-              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                ✓ Editor Verified: <strong>Chad Brooks</strong>
-              </span>
-            </p>
-            <p className="text-xs text-gray-500">Updated Mar 03, 2025</p>
-          </div>
-        </div>
-
-        <div className="text-xs md:text-sm text-gray-600 mt-4 pb-4 border-b">
-          Business.com earns commissions from some listed providers. <a href="#" className="text-blue-600 hover:underline">Editorial Guidelines</a>.
-        </div>
-      </header>
-
-      <section className="mb-6">
-          <p className="text-gray-800 text-sm md:text-base">
-            As your business grows, ensuring you have the right communication tools is critical. Startups can often get by with a basic business phone 
-            system that doesn't include many bells and whistles. But, as your business becomes more sophisticated, it is critical that your communication 
-            tools also become more advanced.
+      <Navbar />
+      <div className="max-w-6xl mx-auto p-4">
+        <header className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">The Best Call Center Management Software of 2025</h1>
+  
+          <p className="text-gray-800 text-lg md:text-lg mb-4">
+            At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we understand the importance of exceptional customer service for your business. That's why we recommend the <span className="text-orange-500 font-semibold">best call center software</span> that provides comprehensive contact center solutions with advanced features for modern enterprises. The <span className="text-orange-500 font-semibold">top CCaaS platforms</span> offer intelligent call routing, omnichannel support, real-time monitoring, and seamless CRM integrations to help you manage customer interactions more effectively. Whether you're running a small support team or a large contact center, the right software can transform your customer experience and operational efficiency.
+          </p>
+        </header>
+  
+        <section className="mb-6">
+          <p className="text-gray-800 text-lg md:text-lg">
+            As your customer service operations grow, having the right call center tools becomes critical. Small teams might manage with basic solutions, but as your contact volume increases, it's essential that your software scales accordingly. Implementing the <span className="text-orange-500 font-semibold">best call center management system</span> can significantly enhance your ability to improve customer satisfaction, reduce handle times, and boost agent productivity. At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we help you find the perfect solution that aligns with your business needs, offering features like IVR, automatic call distribution, workforce management, and detailed reporting.
             {showMore && (
-              <span className="block mt-3">{additionalText}</span>
+              <span className="block mt-3">
+                {additionalText} Additionally, the <span className="text-orange-500 font-semibold">best call center solutions</span> provide advanced capabilities such as sentiment analysis, predictive dialing, quality management, and AI-powered self-service options to optimize your customer interactions. With <span className="text-orange-500 font-semibold">Compare Bazar</span>, you can easily compare the top call center software providers, evaluate their features, and choose the one that best fits your operational requirements. Let us guide you to the tools that will take your customer service to the next level.
+              </span>
             )}
           </p>
-          <button 
-            className="mt-2 text-blue-600 font-medium flex items-center"
+          <button
+            className="mt-2 text-[#000e54] font-medium flex items-center"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? 'LESS -' : 'MORE +'}
           </button>
         </section>
-
       {/* Responsive Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6">
         {systems.map((system, index) => (
@@ -270,56 +253,8 @@ const valueProps = [
           />
         ))}
       </div>
-
-      {/* Added Business component */}
-      {/* first section */}
-    <div className="w-full bg-[#000e54] py-8 px-4">
-      <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-        Call Center in India Advantages
-      </h1>
-      
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {advantages.map((advantage, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-4 flex flex-col items-center text-center rounded-sm"
-            >
-              <div className="text-[#000e54] hover:text-[#ff8633] mb-4">
-                {advantage.icon}
-              </div>
-              <p className="text-gray-800 text-sm">{advantage.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
-    
-    {/* second section */}
-    <div className="w-full  py-10">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8 mx-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {valueProps.map((prop, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                <div className="text-[#000e54] mb-4">
-                  {prop.icon}
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-                  {prop.title}
-                </h3>
-                <p className="text-gray-700">
-                  {prop.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-      
-     <Feedback/>
-    </div>
+    <CallCenterContent/>
     <WideDiv/>
     <Footer/>
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

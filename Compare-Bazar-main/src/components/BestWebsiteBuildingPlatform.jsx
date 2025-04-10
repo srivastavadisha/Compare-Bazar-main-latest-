@@ -7,7 +7,7 @@ import Footer from './Footer';
 import WebsiteBuildingForm from './WebsiteBuildingForm';
 import Modal from './Modal';
 import WebsiteBuilding from './WebsiteBuilding';
-import PlatformIntroduction from './PlatformIntroduction';
+import PlatformIntroduction from './WebsiteBuilderComparison';
 
 const BestWebsiteBuildingPlatform= () => {
   const [showMore, setShowMore] = useState(false);
