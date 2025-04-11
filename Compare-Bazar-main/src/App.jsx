@@ -10,6 +10,7 @@ import ContactPage from './components/Contact';
 import  BestCRMSoftware from './components/BestCRMSoftware';
 import EmailMarketing from './components/EmailMarketing';
 import BestWebsiteBuildingPlatform from './components/BestWebsiteBuildingPlatform';
+import BestProjectManagement from './components/BestProjectManagement';
 
 
 // function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/Careers" element={<CareersPage />} />
         <Route path="/contact-sales" element={<ContactPage />} />
         <Route path="/BestWebsiteBuildingPlatform" element={<BestWebsiteBuildingPlatform />} />
+        <Route path="/BestProjectManagement" element={<BestProjectManagement />} />
       </Routes>
     </Router>
   )

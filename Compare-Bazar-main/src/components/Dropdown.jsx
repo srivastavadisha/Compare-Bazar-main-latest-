@@ -26,7 +26,7 @@ const Dropdown = ({ activeDropdown, isMobile, setActiveDropdown }) => {
       items: [
         { name: "Best CRM Software", link: "/BestCRMSoftware" },
         { name: "Best Call Center Management Software", link: "/Callcenter"},
-        { name: "Best Project Management Software", link: "/ProjectManagement"}
+        { name: "Best Project Management Software", link: "/BestProjectManagement"}
       ]
     },
     {
