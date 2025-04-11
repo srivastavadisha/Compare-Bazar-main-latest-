@@ -1588,10 +1588,10 @@ const ProjectManagementContent = () => {
           </ul>
         </div>
         <div class="text-center md:text-right">
-          <a href="/software-comparison-tool" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-md">
+          <a href="/software-comparison-tool" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-md text-center">
             Compare All Software
           </a>
-          <p class="mt-3 text-sm text-blue-200">Find the perfect fit for your business needs</p>
+          <p class="mt-3 text-sm text-blue-200 text-center">Find the perfect fit for your business needs</p>
         </div>
       </div>
     </div>
