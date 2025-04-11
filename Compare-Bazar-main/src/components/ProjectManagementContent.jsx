@@ -265,7 +265,7 @@ const ProjectManagementContent = () => {
 </section>
 
 {/* what is project management software system */}
-<div id="what-is-projectmanagementsoftware" className="rounded-xl  max-w-6xl mx-auto">
+<div id="what-is-projectmanagementsoftware" className="rounded-xl max-w-6xl mx-auto p-4">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-4xl font-semibold text-gray-900 flex items-center">
           <PieChart className="mr-3 text-[#000e54]" />
@@ -275,7 +275,7 @@ const ProjectManagementContent = () => {
       </div>
 
       {/* Definition Section */}
-      <div className="bg-white p-6 rounded-xl mb-8">
+      <div className="max-w-6xl mx-auto bg-white rounded-xl mb-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           <BookOpen className="mr-2 text-[#000e54]" />
           Definition & Core Functionality
@@ -322,7 +322,7 @@ const ProjectManagementContent = () => {
       </div>
 
       {/* Evolution Section */}
-      <div className="p-6 rounded-xl mb-8">
+      <div className="rounded-xl mb-8">
         <h2 className="text-4xl font-semibold text-gray-900 mb-4 flex items-center">
           <Clock className="mr-2 text-[#000e54]" />
           Evolution of Project Management Tools
@@ -383,7 +383,7 @@ const ProjectManagementContent = () => {
         </div>
       </div>
        {/* Approaches Section */}
-       <div className="mb-16 px-4 max-w-6xl rounded-xl ">
+       <div className="mb-16 rounded-xl ">
         <h2 className="text-4xl font-semibold text-gray-900 mb-8 text-center">
           Project Management Approaches
         </h2>
@@ -829,9 +829,9 @@ const ProjectManagementContent = () => {
     </div>
 
 {/* approach */}
-<section id="projectmanagementsoftware-approach" className="max-w-6xl mx-auto ">
+<section id="projectmanagementsoftware-approach" className="max-w-6xl mx-auto p-4">
     {/* agile */}
-<div  className="max-w-6xl mx-auto rounded-2xl">
+<div  className="rounded-2xl">
       <div className="text-center mb-10">
         <h2 className="text-4xl  font-semibold text-gray-800 mb-3">The Agile Approach</h2>
         <p className="text-lg text-gray-800 max-w-3xl mx-auto">
@@ -841,7 +841,7 @@ const ProjectManagementContent = () => {
 
       <div className="space-y-12">
         {/* Core Principles Section */}
-        <section className="bg-white rounded-xl px-4">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -959,14 +959,14 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* Common Practices Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 ">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
               </svg>
             </div>
-            <h3 className="text-4xl font-semibold text-gray-800">Common Practices</h3>
+            <h3 className="text-xl font-semibold text-gray-900">Common Practices</h3>
           </div>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -1010,7 +1010,7 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* Implementation Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 ">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1018,7 +1018,7 @@ const ProjectManagementContent = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="text-4xl font-semibold text-gray-800">Implementation in Project Management</h3>
+            <h3 className="text-xl font-semibold text-gray-900">Implementation in Project Management</h3>
           </div>
           
           <div className="space-y-8">
@@ -1075,8 +1075,8 @@ const ProjectManagementContent = () => {
     </div>
 
     {/* waterfall */}
-    <div className="max-w-6xl mx-auto p-6 md:p-8  rounded-2xl">
-      <div className="text-center mb-10">
+    <div className="max-w-6xl mx-auto rounded-2xl">
+      <div className="text-center mt-10 mb-10">
         <h2 className="text-4xl font-semibold text-[#000e54] mb-3">The Waterfall Methodology</h2>
         <p className="text-lg text-gray-800 max-w-3xl mx-auto">
           A linear, sequential approach to project management where each phase must be completed before the next begins.
@@ -1085,7 +1085,7 @@ const ProjectManagementContent = () => {
 
       <div className="space-y-12">
         {/* Core Principles Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 ">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1136,7 +1136,7 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* Phases Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-indigo-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1228,7 +1228,7 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* Key Benefits Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1295,7 +1295,7 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* When to Use Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 ">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1352,7 +1352,7 @@ const ProjectManagementContent = () => {
         </section>
 
         {/* Implementation Section */}
-        <section className="bg-white rounded-xl p-6 md:p-8 ">
+        <section className="bg-white rounded-xl">
           <div className="flex items-center mb-6">
             <div className="bg-blue-100 p-3 rounded-full mr-4">
               <svg className="w-6 h-6 text-[#000e54]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1427,7 +1427,7 @@ const ProjectManagementContent = () => {
 
 
 {/*Features Section */}
- <div id="project-feature" className="max-w-6xl mx-auto min-h-screen p-8">
+ <div id="project-feature" className="max-w-6xl mx-auto min-h-screen p-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-semibold text-center mb-10 text-gray-900">
           Key Features to Look for in Project Management Software
@@ -1453,8 +1453,8 @@ const ProjectManagementContent = () => {
 
 
 {/* <!-- Comprehensive Related Software Solutions Section --> */}
-<section id="project-ecosystem" class="related-solutions">
-  <div class="container mx-auto px-4">
+<section id="project-ecosystem" class="related-solutions max-w-6xl mx-auto p-4">
+  <div class="container mx-auto">
     <div class="text-center mb-10">
       <h2 class="text-4xl font-semibold text-gray-900 mb-3">Complete Business Software Ecosystem</h2>
       <p class="text-gray-800 max-w-3xl mx-auto text-lg">Discover our comprehensive guides to the best business software solutions across departments. Find the perfect tools to optimize your operations.</p>
@@ -1603,8 +1603,8 @@ const ProjectManagementContent = () => {
 
 
  {/* <!-- Future Trends Section --> */}
-<section id="project-trends" class="future-trends py-12">
-  <div class="container mx-auto px-4">
+<section id="project-trends" class="future-trends py-12 max-w-6xl mx-auto p-4">
+  <div class="container mx-auto">
     <div class="text-center mb-10">
       <h2 class="text-4xl font-semibold text-gray-900">Future Trends in Project Management Tools</h2>
       <p class="text-lg text-gray-800 mt-2">Emerging technologies shaping the next generation of project management software</p>
@@ -1714,7 +1714,7 @@ const ProjectManagementContent = () => {
       </div>
     </div>
     
-    <div class="mt-10 p-6 bg-blue-900 rounded-lg shadow-md text-white text-center">
+    <div class="mt-10 p-6 bg-[#000e54] rounded-lg shadow-md text-white text-center">
       <h3 class="text-xl font-bold mb-3">Stay Ahead of the Curve</h3>
       <p class="mb-4">The future of project management is evolving rapidly. Choose tools that incorporate these emerging technologies to position your team for success.</p>
       <a href="/project-management-trends" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded transition-colors font-medium">
