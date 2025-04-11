@@ -1154,9 +1154,9 @@ const ProjectManagementContent = () => {
             <div className="space-y-12 md:space-y-0">
               {/* Phase 1 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">1</div>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
-                  <h4 className="text-xl font-semibold text-[#000e54]">1. Requirements</h4>
+                  <h4 className="text-xl font-semibold text-gray-800">Requirements</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     All possible project requirements are gathered and documented in detail.
                   </p>
@@ -1166,10 +1166,10 @@ const ProjectManagementContent = () => {
               
               {/* Phase 2 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">2</div>
                 <div className="hidden md:block md:w-1/2"></div>
                 <div className="md:w-1/2 md:pl-12">
-                  <h4 className="text-xl font-semibold text-[#000e54]">2. System Design</h4>
+                  <h4 className="text-xl font-semibold text-[#000e54]">System Design</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     Requirements are translated into complete system design specifications.
                   </p>
@@ -1178,9 +1178,9 @@ const ProjectManagementContent = () => {
               
               {/* Phase 3 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">3</div>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
-                  <h4 className="text-xl font-semibold text-[#000e54]">3. Implementation</h4>
+                  <h4 className="text-xl font-semibold text-[#000e54]">Implementation</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     Developers write code according to the design specifications.
                   </p>
@@ -1190,10 +1190,10 @@ const ProjectManagementContent = () => {
               
               {/* Phase 4 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">4</div>
                 <div className="hidden md:block md:w-1/2"></div>
                 <div className="md:w-1/2 md:pl-12">
-                  <h4 className="text-xl font-semibold text-[#000e54]">4. Testing</h4>
+                  <h4 className="text-xl font-semibold text-[#000e54]">Testing</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     The system is tested against requirements to identify defects.
                   </p>
@@ -1202,9 +1202,9 @@ const ProjectManagementContent = () => {
               
               {/* Phase 5 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">5</div>
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
-                  <h4 className="text-xl font-semibold text-[#000e54]">5. Deployment</h4>
+                  <h4 className="text-xl font-semibold text-[#000e54]">Deployment</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     The finished product is delivered to customers and deployed.
                   </p>
@@ -1214,10 +1214,10 @@ const ProjectManagementContent = () => {
               
               {/* Phase 6 */}
               <div className="relative md:flex items-center">
-                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="hidden md:block absolute left-1/2 w-6 h-6 bg-[#000e54] rounded-full transform -translate-x-1/2 -translate-y-1/2 text-white text-center">6</div>
                 <div className="hidden md:block md:w-1/2"></div>
                 <div className="md:w-1/2 md:pl-12">
-                  <h4 className="text-xl font-semibold text-[#000e54]">6. Maintenance</h4>
+                  <h4 className="text-xl font-semibold text-[#000e54]">Maintenance</h4>
                   <p className="text-gray-800 text-lg mt-2">
                     Issues are fixed and updates are made based on user feedback.
                   </p>
