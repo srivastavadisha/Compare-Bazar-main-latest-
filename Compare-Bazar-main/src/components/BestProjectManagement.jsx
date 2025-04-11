@@ -69,7 +69,7 @@ const BestProjectManagement = () => {
     { id: 4, title: "Approach of Project Management System", slug: "projectmanagementsoftware-approach" },
     { id: 5, title: "Key Features For Project Management System", slug: "project-feature" },
     { id: 6, title: "Complete Business Software Ecosystem", slug: "project-ecosystem" },
-    { id: 7, title: "Future Trends in Project Management Tools", slug: "email-alternativeproject-trends" },
+    { id: 7, title: "Future Trends in Project Management Tools", slug: "project-trends" },
     { id: 8, title: "Related Articles", slug: "project-articles" },
     { id: 9, title: "FAQs", slug: "project-faq" } ,
   ];
