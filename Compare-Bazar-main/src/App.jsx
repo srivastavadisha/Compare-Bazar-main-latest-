@@ -11,7 +11,9 @@ import  BestCRMSoftware from './components/BestCRMSoftware';
 import EmailMarketing from './components/EmailMarketing';
 import BestWebsiteBuildingPlatform from './components/BestWebsiteBuildingPlatform';
 import BestProjectManagement from './components/BestProjectManagement';
-
+import Advertise from './components/Advertise';
+import EditorialProcess from './components/EditorialProcess';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 // function App() {
 //   return (
@@ -42,6 +44,9 @@ function App() {
         <Route path="/contact-sales" element={<ContactPage />} />
         <Route path="/BestWebsiteBuildingPlatform" element={<BestWebsiteBuildingPlatform />} />
         <Route path="/BestProjectManagement" element={<BestProjectManagement />} />
+        <Route path="/Advertise" element={<Advertise />} />
+        <Route path="/EditorialProcess" element={<EditorialProcess />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   )

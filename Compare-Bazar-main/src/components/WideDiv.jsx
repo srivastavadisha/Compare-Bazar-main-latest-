@@ -49,8 +49,8 @@ const WideDiv = () => {
             <ul className="list-none p-0">
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">About Us</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Careers</a></li>
-              <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Advertise With Us</a></li>
-              <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Editorial Process</a></li>
+              <li className="mb-2 text-sm"><a href="/Advertise" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Advertise With Us</a></li>
+              <li className="mb-2 text-sm"><a href="/EditorialProcess" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Editorial Process</a></li>
             </ul>
           </div>
 
@@ -58,13 +58,13 @@ const WideDiv = () => {
           <div className="mb-6 lg:pl-2">
             <h2 className="text-lg font-semibold mb-7 font-serif text-[#ff8633]">Legal</h2>
             <ul className="list-none p-0">
-              <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Privacy Policy</a></li>
+              <li className="mb-2 text-sm"><a href="/PrivacyPolicy" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Privacy Policy</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Do Not Sell/Share My Personal Information</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Limit the Use of My Sensitive Personal Information</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Terms of Use</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Accessibility</a></li>
               <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Copyright Policy</a></li>
-              <li className="mb-2 text-sm"><a href="#" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Advertising Disclosure</a></li>
+              <li className="mb-2 text-sm"><a href="./Advertise.jsx" className="text-gray-700 no-underline transition-all duration-200 hover:text-[#ff8633] hover:font-semibold">Advertising Disclosure</a></li>
             </ul>
           </div>
 

@@ -65,7 +65,7 @@ const ShippingContainerInfoCards = () => {
         </div>
 
         {/* 20 vs. 40-foot Containers Card */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
+        {/* <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
               src="https://www.unostructures.co/assets/img/product/uno-structures-gp-shipping-container-344.webp"
@@ -94,7 +94,7 @@ const ShippingContainerInfoCards = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </div> */}
 
         {/* Cost Card */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
