@@ -14,6 +14,8 @@ import BestProjectManagement from './components/BestProjectManagement';
 import Advertise from './components/Advertise';
 import EditorialProcess from './components/EditorialProcess';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse'
+import Accessibility from './components/Accessibility';
 
 // function App() {
 //   return (
@@ -47,6 +49,8 @@ function App() {
         <Route path="/Advertise" element={<Advertise />} />
         <Route path="/EditorialProcess" element={<EditorialProcess />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/TermsOfUse" element={<TermsOfUse />} />
+        <Route path="/Accessibility" element={<Accessibility />} />
       </Routes>
     </Router>
   )
