@@ -476,6 +476,132 @@ const Home = () => {
       </div>
     </div>
 
+{/* new */}
+<section id="project-ecosystem" class="related-solutions max-w-6xl mx-auto p-4">
+  <div class="container mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-semibold text-gray-900 mb-3">Advice for Professionals by Professionals</h2>
+      <p class="text-gray-800 max-w-3xl mx-auto text-lg">What does your business need next?</p>
+    </div>
+    
+    {/* <!-- Software Categories Grid --> */}
+    <div class="grid grid-cols-1 mb-4 md:grid-cols-3 gap-8">
+      {/* <!-- Marketing Solutions --> */}
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3" style={{boxShadow: '5px 25px 25px -5px rgba(0, 14, 84, 0.3)'}}>
+        <div class="bg-[#000e54] px-6 py-4" style={{
+  background: 'linear-gradient(135deg, rgba(0,14,84,0.95) 0%, rgba(32,50,153,0.95) 100%)'
+}}>
+          <h3 class="text-xl font-semibold text-white flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+            Marketing Solutions
+          </h3>
+        </div>
+        <div class="divide-y divide-gray-200" >
+          <div class="p-5">
+            <a href="/BestCRMSoftware" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best CRM Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">Your Guide to Creating a Small Business Marketing Plan</p>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/EmailMarketing" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best Email Marketing Services</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">5 Tips to Market Research Like a Pro</p><br></br>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/BestWebsiteBuildingPlatform" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best Website Building Platforms</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">6 Email Marketing Challenges and How to Overcome Them</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* <!-- Technology Solutions --> */}
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3" style={{boxShadow: '5px 10px 25px -5px rgba(0, 14, 84, 0.3)'}}>
+        <div class="bg-[#000e54] px-6 py-4" style={{
+  background: 'linear-gradient(135deg, rgba(0,14,84,0.95) 0%, rgba(32,50,153,0.95) 100%)'
+}}>
+          <h3 class="text-xl font-semibold text-white flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+            Technology Infrastructure
+          </h3>
+        </div>
+        <div class="divide-y divide-gray-200">
+          <div class="p-5">
+            <a href="/phone-systems" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Business Phone Systems</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">How Telematics Can Improve Worksite Productivity</p>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/GpsFleetMangement" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">GPS Fleet Management Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">Types of Cyber Risks Businesses Should Be Aware Of</p>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/BestEmployeeMangementSoftware" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best Employee Management Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">Essential Tech Tools for Small Business Growth</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* <!-- Sales Solutions --> */}
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3" style={{boxShadow: '5px 10px 25px -5px rgba(0, 14, 84, 0.3)'}}>
+        <div class="bg-[#000e54] px-6 py-4" style={{
+  background: 'linear-gradient(135deg, rgba(0,14,84,0.95) 0%, rgba(32,50,153,0.95) 100%)'
+}}>
+          <h3 class="text-xl font-semibold text-white flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Sales & Customer Service
+          </h3>
+        </div>
+        <div class="divide-y divide-gray-200">
+          <div class="p-5">
+            <a href="/BestCRMSoftware" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best CRM Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">10 Proven Strategies to Boost Your Sales Pipeline</p>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/Callcenter" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best Call Center Management Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">How to Build an Effective Sales Team from Scratch</p>
+            </a>
+          </div>
+          <div class="p-5">
+            <a href="/Callcenter" class="block">
+              {/* <h4 class="text-xl font-semibold text-[#000e54] hover:text-orange-500 transition-colors mb-2">Best Call Center Management Software</h4> */}
+              <p class="text-gray-800 text-lg hover:text-orange-500 transition-colors">Converting Leads to Customers: The Ultimate Guide</p>
+            </a>
+          </div>
+          {/* <div class="p-5 bg-orange-50 border-l-4 border-orange-500">
+            <div>
+              <h4 class="text-xl font-semibold text-[#000e54] mb-2">Best Project Management Software</h4>
+              <p class="text-gray-800 text-lg">Converting Leads to Customers: The Ultimate Guide</p>
+              <span class="inline-block mt-2 bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs font-medium">Current Page</span>
+            </div>
+          </div> */}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
         {/* BEST TOOLS SECTION */}
         {/* #ebf5fb;color light blue if needed */}
         <div className="bg-[#f8f8f8] py-12">

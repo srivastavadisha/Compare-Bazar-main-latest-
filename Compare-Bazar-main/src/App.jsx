@@ -16,6 +16,10 @@ import EditorialProcess from './components/EditorialProcess';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse'
 import Accessibility from './components/Accessibility';
+import CopyrightPolicy from './components/CopyrightPolicy';
+import AdvertisingDisclosure from './components/AdvertisingDisclosure';
+import StartABusiness from './components/StartABusiness';
+
 
 // function App() {
 //   return (
@@ -51,6 +55,9 @@ function App() {
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/TermsOfUse" element={<TermsOfUse />} />
         <Route path="/Accessibility" element={<Accessibility />} />
+        <Route path="/CopyrightPolicy" element={<CopyrightPolicy />} />
+        <Route path="/AdvertisingDisclosure" element={<AdvertisingDisclosure />} />
+        <Route path="/StartABusiness" element={<StartABusiness />} />
       </Routes>
     </Router>
   )
