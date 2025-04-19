@@ -3,8 +3,7 @@ import Navbar from './Navbar';
 import WideDiv from './WideDiv';
 import Footer from './Footer';
 import { ArrowRight, Monitor, Calculator, Megaphone } from 'lucide-react';
-import { sendFormData } from './emailService';
-
+import FAQ from "./FAQ";
 
 const StartABusiness = () => {
   
@@ -13,7 +12,7 @@ const StartABusiness = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
-  const TOOLKIT_TEMPLATE_ID = 'template_0h77k1d'; // Replace with your actual template ID
+  const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'; // Replace with your actual web3forms access key
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,24 +20,37 @@ const StartABusiness = () => {
     setError('');
 
     try {
-      // Prepare minimal form data required for the toolkit download
+      // Prepare form data for web3forms
       const formData = {
+        access_key: "547b251c-6d1b-454f-9dd7-4c8894814ea5",
         email: email,
-        firstName_sab: 'Subscriber', // Default value or you could add a name field
-        lastName_sab: '',
-        fullName_sab: 'Subscriber', // Default value
-        // Add any other required fields from your EmailJS template
+        subject: 'New Business Toolkit Subscriber',
+        from_name: 'Business Toolkit Subscription',
+        message: `New subscriber for business toolkit: ${email}`,
       };
 
-      await sendFormData(formData, TOOLKIT_TEMPLATE_ID);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
       
-      setIsSuccess(true);
-      setEmail('');
+      const result = await response.json();
       
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 3000);
+      if (result.success) {
+        setIsSuccess(true);
+        setEmail('');
+        
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (err) {
       setError('Failed to send email. Please try again later.');
       console.error('Error sending email:', err);
@@ -117,6 +129,40 @@ const StartABusiness = () => {
     }
   };
 
+  // faq
+const phoneFAQs = [
+  {
+    question: "How much money do I need to start a business?",
+    answer:
+      "Startup costs vary significantly depending on your business type. E-commerce businesses typically range from $3,000-$10,000, service-based businesses around $1,000-$5,000, and physical retail locations from $10,000-$50,000. We recommend using our Startup Cost Calculator to get a customized estimate based on your specific business model.",
+  },
+  {
+    question: "How long does it take to start a business?",
+    answer:
+      "The timeline varies based on complexity and industry. Simple service businesses can launch in 2-4 weeks, while e-commerce stores typically take 1-3 months, and brick-and-mortar businesses 3-6 months. Our comparison tools help you accelerate the process by quickly identifying the best formation services, platforms, and tools for your needs.",
+  },
+  {
+    question: "Do I need a business plan?",
+    answer:
+      "Yes, even simple businesses benefit from a basic business plan. It doesn't need to be lengthy, but should outline your business model, target market, competitive analysis, marketing strategy, and financial projections. Our Business Plan Template can help you create a professional plan in hours instead of weeks.",
+  },
+  {
+    question: "What's the easiest business to start with minimal investment?",
+    answer:
+      "Service-based businesses that leverage your existing skills (consulting, freelancing, coaching) typically require the lowest investment, often under $1,000 to launch. Online businesses like dropshipping or print-on-demand stores are also cost-effective options with lower overhead than traditional retail.",
+  },
+  {
+    question: "What's the difference between business checking and personal checking?",
+    answer:
+      "Business checking accounts typically offer features designed specifically for businesses, including higher transaction limits, multiple user access, integration with accounting software, and merchant services. They also help maintain the legal separation between personal and business finances, which is crucial for liability protection and tax purposes.",
+  },
+  {
+    question: "How do I price my products or services as a new business?",
+    answer:
+      "Effective pricing involves understanding your costs (both direct costs and overhead), researching competitor pricing, analyzing customer perceived value, and determining your profit goals. Our Pricing Strategy Guide walks you through different pricing models and helps you select the right approach for your market and business goals.",
+  },
+];
+
   return (
     <>
     <Navbar />
@@ -132,7 +178,7 @@ const StartABusiness = () => {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 py-8 sm:px-4 lg:px-4">
+      <main className="max-w-6xl mx-auto mt-6 px-4 py-8 sm:px-4 lg:px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column - Steps to Start */}
           <div className="md:col-span-2">
@@ -331,7 +377,7 @@ const StartABusiness = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-[#000e54]">{category.title}</h3>
-                <p className="text-lg text-gray-600">{category.description}</p>
+                <p className="text-lg text-gray-800">{category.description}</p>
               </div>
             </div>
             <ArrowRight 
@@ -348,8 +394,8 @@ const StartABusiness = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div>
-                      <h4 className="font-medium text-xl text-[#000e54]">{tool.name}</h4>
-                      <p className="text-lg text-gray-600">{tool.description}</p>
+                      <h4 className="font-semibold text-xl text-[#000e54]">{tool.name}</h4>
+                      <p className="text-lg text-gray-800">{tool.description}</p>
                     </div>
                     <a 
                       href={tool.link} 
@@ -360,7 +406,7 @@ const StartABusiness = () => {
                   </div>
                 </div>
               ))}
-              <div className="p-3 text-sm text-gray-500 text-center">
+              <div className="p-3 text-sm text-gray-800 text-center">
                 <p>* Some links above are affiliate links. We may earn a commission if you sign up.</p>
               </div>
             </div>
@@ -371,9 +417,9 @@ const StartABusiness = () => {
   </div>
 </section>
 
-<section className="bg-[#000e54] py-16 px-4">
+<section className="bg-[#000e54] py-16 px-4 mt-12">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-4xl font-semibold text-white mb-6">
           Ready to Begin Your Journey?
         </h2>
         
@@ -403,7 +449,7 @@ const StartABusiness = () => {
           </form>
           
           {error && <p className="text-red-300 mt-2">{error}</p>}
-          {isSuccess && <p className="text-green-200 mt-2">Success!</p>}
+          {isSuccess && <p className="text-green-200 mt-2">Success! Your business toolkit is on its way.</p>}
         </div>
         
         <div className="mt-8">
@@ -415,23 +461,19 @@ const StartABusiness = () => {
           </a>
         </div>
         
-        <p className="text-white text-sm mt-6 opacity-80">
+        <p className="text-white text-lg mt-6 opacity-80">
           Join thousands of entrepreneurs who have successfully launched their startups with our guidance.
         </p>
       </div>
     </section>
 
-
-
-
-
-    <div className="max-w-6xl mx-auto px-4 sm:px-4 lg:px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 mt-16 sm:px-4 lg:px-4">
       {/* Hero Section */}
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-4xl font-semibold text-gray-900 mb-6">
           How to Start a Business in 2024: Complete Guide
         </h1>
-        <p className="text-xl text-gray-800 max-w-6xl mx-auto mb-8">
+        <p className="text-lg text-gray-800 max-w-6xl mx-auto mb-8">
           Compare the best tools, services, and strategies to launch your business successfully. 
           Our data-driven comparisons help you make smarter decisions from day one.
         </p>
@@ -457,11 +499,11 @@ const StartABusiness = () => {
       </div>
       
       <div className="prose text-gray-800 mb-5 pl-14">
-        <p className="text-lg">
+        <p className="text-lg mb-2">
           Before investing time and money, verify that your business idea solves a real problem. 
           Our market research tools help you:
         </p>
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc pl-5 space-y-1 text-lg">
           <li>Analyze search volume for your product/service</li>
           <li>Compare competitor pricing and offerings</li>
           <li>Identify underserved customer needs</li>
@@ -469,7 +511,7 @@ const StartABusiness = () => {
       </div>
       
       <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 ml-14">
-        <h4 className="font-medium mb-2">Compare Market Research Tools:</h4>
+        <h4 className="font-lg mb-2">Compare Market Research Tools:</h4>
         <div className="flex flex-wrap gap-2">
           {['Google Trends', 'SEMrush', 'Ahrefs', 'SurveyMonkey'].map((tool) => (
             <a key={tool} href="#" className="text-blue-600 hover:underline text-sm bg-blue-50 px-3 py-1 rounded">
@@ -507,22 +549,22 @@ const StartABusiness = () => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               <tr>
-                <td className="px-4 py-4 whitespace-nowrap font-semibold">Sole Proprietorship</td>
-                <td className="px-4 py-4">Unlimited</td>
-                <td className="px-4 py-4">Pass-through</td>
-                <td className="px-4 py-4">Low</td>
+                <td className="px-4 py-4 whitespace-nowrap font-semibold text-lg">Sole Proprietorship</td>
+                <td className="px-4 py-4 text-lg">Unlimited</td>
+                <td className="px-4 py-4 text-lg">Pass-through</td>
+                <td className="px-4 py-4 text-lg">Low</td>
               </tr>
               <tr>
-                <td className="px-4 py-4 whitespace-nowrap font-medium">LLC</td>
-                <td className="px-4 py-4">Limited</td>
-                <td className="px-4 py-4">Flexible</td>
-                <td className="px-4 py-4">Medium</td>
+                <td className="px-4 py-4 whitespace-nowrap font-lg">LLC</td>
+                <td className="px-4 py-4 text-lg">Limited</td>
+                <td className="px-4 py-4 text-lg">Flexible</td>
+                <td className="px-4 py-4 text-lg">Medium</td>
               </tr>
               <tr>
-                <td className="px-4 py-4 whitespace-nowrap font-medium">Corporation</td>
-                <td className="px-4 py-4">Limited</td>
-                <td className="px-4 py-4">Double taxation</td>
-                <td className="px-4 py-4">High</td>
+                <td className="px-4 py-4 whitespace-nowrap font-lg">Corporation</td>
+                <td className="px-4 py-4 text-lg">Limited</td>
+                <td className="px-4 py-4 text-lg">Double taxation</td>
+                <td className="px-4 py-4 text-lg">High</td>
               </tr>
             </tbody>
           </table>
@@ -536,9 +578,8 @@ const StartABusiness = () => {
   </div>
 </section>
 
-
       {/* Success Story */}
-      <section className="mb-20 bg-blue-50 rounded-2xl p-8 md:p-12">
+      <section className="mb-10 bg-blue-50 rounded-2xl p-8 md:p-12">
         <div className="max-w-4xl mx-auto">
           <div className="md:flex gap-12 items-center">
             <div className="md:w-1/3 mb-8 md:mb-0">
@@ -549,11 +590,11 @@ const StartABusiness = () => {
               />
             </div>
             <div className="md:w-2/3">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">How Comparing Options Helped Grow a $100K/Month Business</h2>
-              <blockquote className="text-lg text-gray-700 mb-6 border-l-4 border-blue-500 pl-4">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6">How Comparing Options Helped Grow a $100K/Month Business</h2>
+              <blockquote className="text-lg text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">
                 "Using Compare Bazaar's platform comparisons saved us $12,000 in our first year by choosing the right tools from day one."
               </blockquote>
-              <div className="prose text-gray-600 mb-6">
+              <div className="prose text-gray-800 text-lg mb-6">
                 <p>
                   When Jessica Rodriguez launched her eco-friendly home goods store, she nearly signed up for an expensive e-commerce platform before discovering our comparison tools. 
                 </p>
@@ -562,8 +603,8 @@ const StartABusiness = () => {
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <h4 className="font-medium mb-2">Key Decisions Informed by Comparisons:</h4>
-                <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                <h4 className="text-xl font-semibold mb-2">Key Decisions Informed by Comparisons:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-gray-800 text-lg">
                   <li>Selected Shopify over BigCommerce for better app ecosystem</li>
                   <li>Chose Square over PayPal for lower in-person transaction fees</li>
                   <li>Picked Mailchimp over Klaviyo for simpler email automation</li>
@@ -579,7 +620,9 @@ const StartABusiness = () => {
 
 
 
-
+    <div id="phoneFAQs" className="">
+        <FAQ faqs={phoneFAQs} />
+      </div>
     <WideDiv />
     <Footer/>
     </>
