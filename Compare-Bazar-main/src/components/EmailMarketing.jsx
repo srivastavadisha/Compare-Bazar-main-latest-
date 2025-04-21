@@ -5,11 +5,45 @@ import Navbar from './Navbar';
 import WideDiv from './WideDiv';
 import Footer from './Footer';
 import Modal from './Modal';
-import EmailMarketingForm from './EmailMarketingForm'
+import EmailMarketingForm from './EmailMarketingForm';
+import Article from './ArticleLayoutCommon';
 
 const EmailMarketing = () => {
   const [showMore, setShowMore] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const articles = [
+    {
+      id: 1,
+      title: "Email Marketing vs Social Media: Which Drives More Conversions?",
+      image: "/images/img1email.png",
+      author: "Catie",
+      date: "April 5, 2023",
+      excerpt:
+        "Marketing teams often debate which channel deserves more budget allocation. Should you focus on email marketing or invest heavily in social media campaigns...",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Mailchimp Email Marketing: Features, Pricing, Pros and Cons",
+      image: "/images/img2email.png",
+      author: "Catie",
+      date: "August 17, 2023",
+      excerpt:
+        "Mailchimp Overview Mailchimp is a popular email marketing platform offering intuitive tools for businesses of all sizes. Their all-in-one marketing solution includes...",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "7 Key Metrics to Measure Email Marketing Success",
+      image: "/images/img3email.png",
+      author: "Catie",
+      date: "January 22, 2024",
+      excerpt:
+        "As a marketing professional, measuring the effectiveness of your email campaigns is essential for optimizing performance. Beyond basic open rates...",
+      link: "#",
+    },
+  ];
 
   const systems = [
   
@@ -142,6 +176,14 @@ const EmailMarketing = () => {
       <PhoneSystemContent />
     </div>
     <WideDiv/>
+    <div id="d-article">
+        <Article
+          title="Related Articles"
+          items={articles}
+          buttonText="View Post"
+          buttonColor="bg-[#ff8633]"
+        />
+      </div>
     <Footer/>
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <EmailMarketingForm />

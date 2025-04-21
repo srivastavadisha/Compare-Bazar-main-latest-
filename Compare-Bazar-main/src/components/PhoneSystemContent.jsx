@@ -70,29 +70,69 @@ const PhoneSystemContent = () => {
     },
   ];
 
-  // faq
-  const phoneFAQs = [
-    {
-      question: "Can I get a second phone number without buying another phone?",
-      answer:
-        "By ordering a virtual phone number, you can forward calls to your current phone without adding another cell line or buying a separate device. Softphone apps display incoming calls by line, so you always know when a customer is calling.",
-    },
-    {
-      question: "How many VoIP lines does my business need?",
-      answer:
-        "The number of VoIP lines depends on your call volume and number of employees. A good rule is to have 1 line for every 3-4 employees who need simultaneous calling.",
-    },
-    {
-      question: "Are business phone systems secure?",
-      answer: [
-        "Modern business phone systems use enterprise-grade security including:",
-        "End-to-end encryption for calls",
-        "Secure SIP protocols",
-        "Multi-factor authentication",
-        "Regular security updates",
-      ],
-    },
-  ];
+ // faq
+const phoneFAQs = [
+  {
+    question: "Can I get a second phone number without buying another phone?",
+    answer:
+      "By ordering a virtual phone number, you can forward calls to your current phone without adding another cell line or buying a separate device. Softphone apps display incoming calls by line, so you always know when a customer is calling.",
+  },
+  {
+    question: "How many VoIP lines does my business need?",
+    answer:
+      "The number of VoIP lines depends on your call volume and number of employees. A good rule is to have 1 line for every 3-4 employees who need simultaneous calling.",
+  },
+  {
+    question: "Are business phone systems secure?",
+    answer: [
+      "Modern business phone systems use enterprise-grade security including:",
+      "End-to-end encryption for calls",
+      "Secure SIP protocols",
+      "Multi-factor authentication",
+      "Regular security updates",
+    ],
+  },
+  {
+    question: "What happens if my internet goes down?",
+    answer: 
+      "Most VoIP providers offer failover options that automatically route calls to mobile devices or alternative numbers during outages. Some also provide automatic switching to backup internet connections to maintain service continuity.",
+  },
+  {
+    question: "Can I keep my existing business phone number?",
+    answer:
+      "Yes, number porting allows you to transfer your existing phone numbers to a new VoIP system. The process typically takes 2-4 weeks and most providers handle the paperwork for you.",
+  },
+  {
+    question: "What equipment do I need for a VoIP phone system?",
+    answer: [
+      "The basic requirements for a VoIP system include:",
+      "Reliable internet connection (minimum 100 Kbps per concurrent call)",
+      "VoIP-compatible phones or softphone applications",
+      "Headsets for computer-based calling (optional)",
+      "Router with QoS capabilities for call prioritization",
+    ],
+  },
+  {
+    question: "How much does a business VoIP system cost?",
+    answer:
+      "VoIP services typically range from $15-50 per user monthly depending on features. Cloud-based systems eliminate most hardware costs, while on-premises solutions require initial equipment investment but may reduce long-term expenses.",
+  },
+  {
+    question: "Can employees use the business phone system while working remotely?",
+    answer:
+      "Yes, most modern VoIP systems include mobile apps and desktop softphones that allow employees to make and receive business calls from anywhere with internet access, maintaining their business identity regardless of location.",
+  },
+  {
+    question: "How do business phone systems integrate with other software?",
+    answer:
+      "Modern business phone systems offer API integrations with CRM platforms, helpdesk solutions, email systems, and collaboration tools. These integrations enable features like click-to-dial, automatic call logging, and customer data display during calls.",
+  },
+  {
+    question: "What's the difference between cloud-hosted and on-premises phone systems?",
+    answer:
+      "Cloud-hosted systems are maintained by the provider offsite with minimal hardware requirements and subscription-based pricing. On-premises systems require local hardware installation and maintenance but offer greater customization and potentially lower long-term costs.",
+  },
+];
 
   // /table content
   const contents = [
@@ -402,7 +442,7 @@ const PhoneSystemContent = () => {
           {/* Left side text content - centered at all screen sizes */}
           <div className="w-full lg:w-2/5 text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-2 text-center">
-              Business Communications
+              Business Phone System
             </h2>
             <h3 className="text-4xl font-bold text-gray-800 mb-6 text-center">
               Buyer's Guide
