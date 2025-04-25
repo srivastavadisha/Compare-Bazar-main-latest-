@@ -19,7 +19,7 @@ import Accessibility from './components/Accessibility';
 import CopyrightPolicy from './components/CopyrightPolicy';
 import AdvertisingDisclosure from './components/AdvertisingDisclosure';
 import StartABusiness from './components/StartABusiness';
-
+import CookieConsent from './components/CookieConsent';
 
 // function App() {
 //   return (
@@ -35,6 +35,7 @@ import StartABusiness from './components/StartABusiness';
 
 function App() {
   return( 
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -60,6 +61,8 @@ function App() {
         <Route path="/StartABusiness" element={<StartABusiness />} />
       </Routes>
     </Router>
+    <CookieConsent/>
+    </>
   )
 }
 

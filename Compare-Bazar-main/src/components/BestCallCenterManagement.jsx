@@ -6,6 +6,7 @@ import Footer from './Footer';
 import CallCenterForm from './CallCenterForm';
 import Modal from './Modal';
 import CallCenterContent from './CallCenterContent';
+import Article from './ArticleLayoutCommon';
 
 const BestCallCenterManagement= () => {
   const [showMore, setShowMore] = useState(false);
@@ -147,6 +148,38 @@ const BestCallCenterManagement= () => {
       title: 'Modernized Infrastructure and technology'
     }
   ];
+  const articles = [
+    {
+      id: 1,
+      title: "Cloud-Based vs On-Premise Call Center Solutions: Which is Right for Your Business?",
+      image: "/images/img1call1.png",
+      author: "Alex",
+      date: "March 15, 2023",
+      excerpt:
+        "When choosing call center software, one of the first decisions is between cloud-based and on-premise solutions. Cloud systems offer scalability and remote access, while on-premise provides more control...",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Top 5 Call Center Software Platforms in 2024: Features and Comparison",
+      image: "/images/img2call2.png",
+      author: "Alex",
+      date: "July 8, 2023",
+      excerpt:
+        "From Genesys to Five9, today's call center platforms offer advanced features like AI-powered routing, omnichannel support, and real-time analytics. We compare the top solutions based on pricing...",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Essential Features to Look for in Call Center Management Software",
+      image: "/images/img3call3.jpg",
+      author: "Alex",
+      date: "February 10, 2024",
+      excerpt:
+        "Modern call center software should include more than just basic calling capabilities. Look for features like intelligent call routing, workforce management, CRM integration, and comprehensive reporting...",
+      link: "#",
+    },
+  ];
 
 //values
 const valueProps = [
@@ -255,6 +288,14 @@ const valueProps = [
       </div>
     </div>
     <CallCenterContent/>
+    <div id="d-article">
+        <Article
+          title="Related Articles"
+          items={articles}
+          buttonText="View Post"
+          buttonColor="bg-[#ff8633]"
+        />
+      </div>
     <WideDiv/>
     <Footer/>
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

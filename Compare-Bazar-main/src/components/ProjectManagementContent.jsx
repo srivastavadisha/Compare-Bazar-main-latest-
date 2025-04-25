@@ -91,35 +91,38 @@ const ProjectManagementContent = () => {
   ];
 
 
-   const articles1 = [
-      {
-        id: 1,
-        title: "VoIP vs Landline Phone System",
-        image: busimage,
-        author: "Catie",
-        date: "November 21, 2019",
-        excerpt: "American businesses today face a major debate when deciding on technology. Should I get VoIP vs. a traditional landline ...",
-        link: "#"
-      },
-      {
-        id: 2,
-        title: "RingCentral Business Phone System: Features, Pricing, Pros and Cons",
-        image: busimage,
-        author: "Catie",
-        date: "October 7, 2020",
-        excerpt: "RingCentral Overview RingCentral is a popular VoIP provider offering both cloud-based and hosted solutions for businesses of various sizes. They ...",
-        link: "#"
-      },
-      {
-        id: 3,
-        title: "8 Steps for Choosing the Right VoIP Service Provider",
-        image: busimage,
-        author: "Catie",
-        date: "January 11, 2023",
-        excerpt: "As a business leader, surely you want to find the best business phone system for your organization's needs. With ...",
-        link: "#"
-      }
-    ];
+  const articles = [
+    {
+      id: 1,
+      title: "Agile vs Waterfall: Which Project Management Methodology Fits Your Team?",
+      image: "/images/img1project.png",
+      author: "Jordan",
+      date: "May 12, 2023",
+      excerpt:
+        "Choosing the right project management approach can make or break your workflow. Agile offers flexibility for fast-moving teams, while Waterfall provides structure for well-defined projects. Learn which method aligns best with your goals...",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Top 5 Project Management Tools in 2024: Features, Pricing & Comparison",
+      image: "/images/img2project.png",
+      author: "Jordan",
+      date: "September 20, 2023",
+      excerpt:
+        "From Asana to Jira and ClickUp, modern project management tools offer task tracking, collaboration, and automation. We compare the top platforms based on usability, integrations, and pricing to help you choose the best fit...",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Key Features to Look for in Project Management Software",
+      image: "/images/img3project.png",
+      author: "Jordan",
+      date: "January 5, 2024",
+      excerpt:
+        "Not all project management tools are created equal. Essential features include Gantt charts, Kanban boards, time tracking, team collaboration, and reporting. Discover which capabilities will optimize your workflow...",
+      link: "#",
+    },
+  ];
 
     const homeTestimonials = [
         {
@@ -1726,13 +1729,13 @@ const ProjectManagementContent = () => {
 
 
        {/* article */}
-        <div id="project-articles">
-      <Article
-        title="Related Articles" 
-        items={articles1} 
-        buttonText="View Post" 
-        buttonColor="bg-[#ff8633]" 
-      />
+       <div id="d-article">
+        <Article
+          title="Related Articles"
+          items={articles}
+          buttonText="View Post"
+          buttonColor="bg-[#ff8633]"
+        />
       </div>
 
       {/* faq */}

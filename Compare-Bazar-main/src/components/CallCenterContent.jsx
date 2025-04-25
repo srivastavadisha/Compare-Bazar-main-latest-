@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import FAQ from './FAQ';
-import Article from './ArticleLayoutCommon';
 import Feedback from './Feedback';
-import busimage from '/images/honey.png';
+
 import TableOfContents from './TableOfContents';
 
 const CallCenterContent = () => {
@@ -123,35 +122,7 @@ const CallCenterContent = () => {
     { id: 9, title: "FAQs", slug: "employee-faq" },
   ];
 
-   const articles1 = [
-      {
-        id: 1,
-        title: "VoIP vs Landline Phone System",
-        image: busimage,
-        author: "Catie",
-        date: "November 21, 2019",
-        excerpt: "American businesses today face a major debate when deciding on technology. Should I get VoIP vs. a traditional landline ...",
-        link: "#"
-      },
-      {
-        id: 2,
-        title: "RingCentral Business Phone System: Features, Pricing, Pros and Cons",
-        image: busimage,
-        author: "Catie",
-        date: "October 7, 2020",
-        excerpt: "RingCentral Overview RingCentral is a popular VoIP provider offering both cloud-based and hosted solutions for businesses of various sizes. They ...",
-        link: "#"
-      },
-      {
-        id: 3,
-        title: "8 Steps for Choosing the Right VoIP Service Provider",
-        image: busimage,
-        author: "Catie",
-        date: "January 11, 2023",
-        excerpt: "As a business leader, surely you want to find the best business phone system for your organization's needs. With ...",
-        link: "#"
-      }
-    ];
+  
 
     const homeTestimonials = [
         {
@@ -2039,15 +2010,7 @@ const CallCenterContent = () => {
     </div>
 </div>
 
-       {/* article */}
-        <div id="call-articles">
-      <Article
-        title="Related Articles" 
-        items={articles1} 
-        buttonText="View Post" 
-        buttonColor="bg-[#ff8633]" 
-      />
-      </div>
+    
 
 
       {/* faq */}
