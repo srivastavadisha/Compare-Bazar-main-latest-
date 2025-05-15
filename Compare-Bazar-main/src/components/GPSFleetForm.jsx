@@ -38,13 +38,11 @@ const GPSFleetForm = ({ onClose }) => {
   };
 
   const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      vehicleTypes: checked
-        ? [...prev.vehicleTypes, value]
-        : prev.vehicleTypes.filter(type => type !== value)
-    }));
+   const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
   const nextStep = () => {
@@ -79,16 +77,16 @@ const GPSFleetForm = ({ onClose }) => {
     try {
       const TEMPLATE_ID = 'template_rk2suh3'; // Replace with your actual template ID for this form
       const response = await sendFormData(formData, TEMPLATE_ID);
-    console.log('Email sent successfully:', response);
-    setShowSuccess(true);
-    resetForm();
-  } catch (error) {
-    console.error('Email sending failed:', error);
-    alert('Sorry, there was a problem submitting your information. Please try again later.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+      console.log('Email sent successfully:', response);
+      setShowSuccess(true);
+      resetForm();
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      alert('Sorry, there was a problem submitting your information. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const renderStep = () => {
     switch (currentStep) {
@@ -133,20 +131,20 @@ const GPSFleetForm = ({ onClose }) => {
               {['Vans or trucks', 'Heavy duty or semi trucks', 'Cars or limousines', 'Trailers', 'Construction machinery', 'Buses', 'Other'].map((type) => (
                 <div 
                   key={type}
-                  className={`p-3 rounded-md bg-blue-50 cursor-pointer ${formData.vehicleTypes.includes(type) ? 'border-2 border-[#ff8633]' : ''}`}
-                  onClick={() => handleCheckboxChange({ target: { name: 'vehicleTypes', value: type, checked: !formData.vehicleTypes.includes(type) } })}
+                  className={`p-3 rounded-md bg-blue-50 cursor-pointer ${formData.vehicleTypes === type ? 'border-2 border-[#ff8633]' : ''}`}
+                  onClick={() => handleCheckboxChange({ target: { name: 'vehicleTypes', value: type } })}
                 >
                   <label className="flex items-center cursor-pointer">
                     <div className="relative flex items-center justify-center">
                       <input 
-                        type="checkbox" 
+                        type="radio" 
                         name="vehicleTypes" 
                         className="sr-only"
-                        checked={formData.vehicleTypes.includes(type)}
+                        checked={formData.vehicleTypes === type}
                         onChange={() => {}}
                       />
-                      <div className={`w-4 h-4 border rounded-full flex items-center justify-center ${formData.vehicleTypes.includes(type) ? 'bg-[#ff8633] border-[#ff8633]' : 'border-gray-400 bg-white'}`}>
-                        {formData.vehicleTypes.includes(type) && (
+                      <div className={`w-4 h-4 border rounded-full flex items-center justify-center ${formData.vehicleTypes === type ? 'bg-[#ff8633] border-[#ff8633]' : 'border-gray-400 bg-white'}`}>
+                        {formData.vehicleTypes === type && (
                           <div className="w-2 h-2 rounded-full bg-white"></div>
                         )}
                       </div>
@@ -176,7 +174,7 @@ const GPSFleetForm = ({ onClose }) => {
       case 4:
         return (
           <div>
-            <h2 className="text-lg font-semibold mb-3 text-gray-800">Good news! We’ve found suppliers for you. Please tell us where to send your free quotes.</h2>
+            <h2 className="text-lg font-semibold mb-3 text-gray-800">Good news! We've found suppliers for you. Please tell us where to send your free quotes.</h2>
             <input
               type="email"
               name="email"
@@ -272,7 +270,7 @@ const GPSFleetForm = ({ onClose }) => {
   return (
     <div className="w-full bg-white relative">
       {showSuccess && (
-        <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-sm w-full border-l-4 border-[#ff8633] z-1000 slide-in-right">
+        <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-sm w-full border-l-4 border-[#ff8633] z-50 slide-in-right">
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <svg className="h-5 w-5 text-[#ff8633]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -322,8 +320,8 @@ const GPSFleetForm = ({ onClose }) => {
             )}
             
             <button
-              type="button"
-              onClick={currentStep === 6 ? handleSubmit : nextStep}
+              type={currentStep === 6 ? "submit" : "button"}
+              onClick={currentStep === 6 ? null : nextStep}
               className={`ml-auto px-6 py-2 rounded-md font-medium text-sm ${
                 isStepValid() 
                   ? 'bg-orange-400 hover:bg-orange-500 text-white' 
