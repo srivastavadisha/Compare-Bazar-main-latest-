@@ -237,7 +237,7 @@ const keyframesStyle = `
       {/* Cookie Consent Banner */}
       {showBanner && (
         <div 
-          className="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-white shadow-lg z-50 w-[90%] max-w-3xl rounded-xl p-4 border border-gray-200"
+          className="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white shadow-lg z-50 w-[90%] max-w-3xl rounded-xl p-4 border border-gray-200"
           style={slideUpAnimation}
           role="dialog"
           aria-labelledby="cookie-title"

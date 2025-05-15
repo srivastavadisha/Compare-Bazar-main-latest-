@@ -20,6 +20,8 @@ import CopyrightPolicy from './components/CopyrightPolicy';
 import AdvertisingDisclosure from './components/AdvertisingDisclosure';
 import StartABusiness from './components/StartABusiness';
 import CookieConsent from './components/CookieConsent';
+import GPSBannerForm from './components/gpsbannerform';
+// import {Helmet} from 'react-helmet'
 
 // function App() {
 //   return (
@@ -59,6 +61,7 @@ function App() {
         <Route path="/CopyrightPolicy" element={<CopyrightPolicy />} />
         <Route path="/AdvertisingDisclosure" element={<AdvertisingDisclosure />} />
         <Route path="/StartABusiness" element={<StartABusiness />} />
+        <Route path="/GPSBannerForm" element={<GPSBannerForm />} />
       </Routes>
     </Router>
     <CookieConsent/>

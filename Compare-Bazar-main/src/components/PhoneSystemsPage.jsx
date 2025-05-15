@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Modal from './Modal';
 import BusinessPhoneSystemForm from './BusinessPhoneSystemForm';
 import TableOfContents from './TableOfContents';
+import { Link } from 'react-router-dom';
 
 const PhoneSystemsPage = () => {
   const [showMore, setShowMore] = useState(false);
@@ -111,7 +112,11 @@ const PhoneSystemsPage = () => {
   
         <section className="mb-6">
           <p className="text-gray-800 text-lg md:text-lg">
-            As your business grows, ensuring you have the right communication tools is critical. Small teams can often manage with basic phone services, but as your operations expand, it's essential that your phone system scales accordingly. Implementing the <span className="text-orange-500 font-semibold">best business phone system</span> can significantly enhance your ability to improve customer service, reduce costs, and boost productivity. At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we help you find the perfect communication solution that aligns with your business needs, offering features like call forwarding, video conferencing, and real-time analytics.
+            As your business grows, ensuring you have the right communication tools is critical. Small teams can often manage with basic phone services, but as your operations expand, it's essential that your phone system scales accordingly. Implementing the <span className="text-orange-500 font-semibold">
+          <Link to="/phonesystemform" className="hover:underline">
+            best business phone system
+          </Link>
+        </span> can significantly enhance your ability to improve customer service, reduce costs, and boost productivity. At <span className="text-orange-500 font-semibold">Compare Bazar</span>, we help you find the perfect communication solution that aligns with your business needs, offering features like call forwarding, video conferencing, and real-time analytics.
             {showMore && (
               <span className="block mt-3">
                 {additionalText} Additionally, the <span className="text-orange-500 font-semibold">best business phone systems</span> provide advanced capabilities such as AI-powered virtual assistants, call recording, and multi-channel support to optimize your communications. With <span className="text-orange-500 font-semibold">Compare Bazar</span>, you can easily compare the top phone system providers, evaluate their features, and choose the one that best fits your growing business. Let us guide you to the tools that will take your business communications to the next level.
